@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritupan Deka - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* General Styles */
+        body {
+            background-color: #12182b;
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            line-height: 1.6;
+            font-size: 16px;
+            overflow: hidden;
+            
+        }
+
+        ::-webkit-scrollbar {
+            display: none; /* Hides the scrollbar */
+        }
+        a{
+            text-decoration: none;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0d0f1d80;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .left img{
+            display: inline-block;
+            height: 50px;
+            margin-right: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .left img:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        
+
+        #clock {
+            text-align: center;
+            color: white;
+        }
+
+        #time {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        #day-message {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+
+        .center{
+            transition: color 0.3s ease;
+        }
+        #clock:hover{
+            cursor:none;
+            color: #9a42ec;
+        }
+        
+        .right ul {
+            list-style:none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .right ul li a {
+            color: white;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .right ul li a:hover {
+            color: #9a42ec;
+            transform: scale(1.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 190px 100px ;
+            margin-bottom: 80px;
+            text-align:center;
+        }
+        
+
+        .hero  h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 5px #ccc;
+            transition: text-shadow 0.3s ease;
+        }
+        .hero h1:hover{
+            text-shadow: 0 0 10px #ccc;
+        }
+
+        .hero  p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .hero  span {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            color: #ccc; 
+        }
+        
+        .hero .btn {
+            background-color: #9a42ec;
+            color: white;
+            padding: 12px 24px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero  .btn:hover {
+            background-color: #7e2bc2;
+        }
+
+
+        /* About Section */
+        #about {
+            padding: 200px 50px;
+            background-color: #12182b;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            text-align: justify;
+            color: #ccc;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #12182b;
+            padding: 200px 50px;
+        }
+
+        #skills h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .skills-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .skills-carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Edge */
+        }
+
+        .skill {
+            background-color: #1a1f2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 100px;
+            max-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .skill img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .skill span {
+            font-size: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+
+        /* Projects Section */
+        #projects {
+            background-color: #12182b;
+            padding: 150px 50px;
+        }
+
+        #projects h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .project-card {
+            background-color: #1a1f2a;
+            width: 250px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #9a42ec;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            color: #9a42ec;
+            font-size: 1rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #9a42ec;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            background-color: #9a42ec;
+            color: #12182b;
+        }
+        /* Contact Section */
+        #contact {
+            background-color: #1a1f2a;
+            color: white;
+            padding: 150px 50px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2b2f3a;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #888;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6b6b;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff4b4b;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin: 5rem;
+
+        }
+
+        .contact-info img {
+            width: 25px;
+        }
+
+        .contact-info icon,span {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            padding-left: 2rem;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover img {
+            transform: scale(1.1);
+        }
+
+
+        /* Footer Section */
+        footer {
+            background-color: #0d0f1d;
+            padding: 10px 0 ;
+            color: #ccc;
+            font-size: 0.8rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            height:2rem;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero .leftSection {
+                max-width: 100%;
+            }
+
+            .hero .rightSection img {
+                width: 300px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .projects-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header (Navigation Bar) -->
+    <header>
+        <nav>
+            <div class="left">
+              <a href="#hero" ><img src="images/logo3.png" alt="Logo"></a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div id="clock" class="center">
+                <p id="time">12:00 PM</p> <!-- Current time will be displayed here -->
+                <p id="day-message">Have a nice day!</p> <!-- Day-specific message will go here -->
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+            <h1>Hi, I'm Ritupan Deka</h1>
+            <p>A passionate developer with expertise in</p>
+            <span id="element"></span>
+            <div class="buttons">
+                <button class="btn">Download Resume</button>
+            </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a Computer Science and Engineering  Graduate. I specialize in Android and Web development, with hands-on experience in building dynamic and scalable applications. I am passionate about learning new technologies and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as well, and I enjoy tackling challenging problems.
+        </p>
+        <div class="contact-info">
+                <div class="social-links">
+                    <a href="mailto:ritupan777@gmail.com" alt="email">
+                        <img src="images/gmail.png" alt="Gmail">
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank">
+                        <img src="images/github.png" alt="GitHub">
+                    </a> 
+                </div>
+            </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-carousel">
+            <div class="skill">
+                <span>HTML</span>
+            </div>
+            <div class="skill">
+                <span>CSS</span>
+            </div>
+            <div class="skill">
+                <span>React</span>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+            </div>
+            <div class="skill">
+                <span>TypeScript</span>
+            </div>
+            <div class="skill">
+                <span>Git</span>
+            </div>
+            <div class="skill">
+                <span>NextJS</span>
+            </div>
+            <div class="skill">
+                <span>Java</span>
+            </div>
+            <div class="skill">
+                <span>C#</span>
+            </div>
+            <div class="skill">
+                <span>Python</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Handwritten Text Recognition</h3>
+                <p>Developed a machine learning model for handwritten paragraph image-to-text conversion.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Zero Watermarking for Medical Image</h3>
+                <p>Created a technique for watermarking medical images while preserving their integrity.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or social media!</p>
+        <div class="contact-container">
+            <!-- <div class="contact-info">
+                <icon>
+                    <img src="images/gmail.png" alt="Gmail">
+                    <span>ritupan777@gmail.com</span>
+                </icon>
+                <icon>
+                    <img src="images/address.png" alt="Address">
+                    <span>Guwahati, Assam, India</span>
+                </icon>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank">
+                        <img src="images/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank">
+                        <img src="images/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+            </div> -->
+            <form action="https://formsubmit.co/YOUR_EMAIL" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ritupan Deka. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Type.js Animation Script -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+
+        // Function to get the current time
+        function updateClock() {
+            const timeElement = document.getElementById("time");
+            const dayMessageElement = document.getElementById("day-message");
+
+            // Get current date and time
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const day = now.getDay();
+
+            // Format time (e.g., 1:05 PM)
+            const formattedTime = `${hours % 12 || 12}:${minutes < 10 ? '0' : ''}${minutes} ${hours >= 12 ? 'PM' : 'AM'}`;
+            timeElement.textContent = formattedTime;
+
+            // Get the day name and set a day-specific message
+            let dayMessage = "Have a nice day!";
+            switch(day) {
+                case 0:
+                    dayMessage = "Have a nice Sunday!";
+                    break;
+                case 1:
+                    dayMessage = "Have a nice Monday!";
+                    break;
+                case 2:
+                    dayMessage = "Have a nice Tuesday!";
+                    break;
+                case 3:
+                    dayMessage = "Have a nice Wednesday!";
+                    break;
+                case 4:
+                    dayMessage = "Have a nice Thursday!";
+                    break;
+                case 5:
+                    dayMessage = "Have a nice Friday!";
+                    break;
+                case 6:
+                    dayMessage = "Have a nice Saturday!";
+                    break;
+            }
+
+            dayMessageElement.textContent = dayMessage;
+        }
+
+        // Update the clock and day message every minute
+        setInterval(updateClock, 60000);
+
+        // Call the function once to display initial time and message
+        updateClock();
+
+
+
+
+        var typed = new Typed('#element', {
+            strings: ['Web Development.', 'Android Development.', 'Web Designing.', 'Machine Learning.'],
+            typeSpeed: 60,
+            backSpeed: 30, 
+            backDelay: 1000, 
+            loop: true,
+            showCursor:true,
+            cursorChar: '|', 
+        });
+    </script>
+</body>
+</html>
