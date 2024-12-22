@@ -20,8 +20,6 @@
             font-family: 'Source Code Pro', monospace;
             line-height: 1.6;
             font-size: 16px;
-            overflow: hidden;
-            
         }
 
         ::-webkit-scrollbar {
@@ -130,7 +128,7 @@
             color: #ccc; 
         }
         
-        .hero .btn {
+        .hero #btn {
             background-color: #9a42ec;
             color: white;
             padding: 12px 24px;
@@ -142,7 +140,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .hero  .btn:hover {
+        .hero  #btn:hover {
             background-color: #7e2bc2;
         }
 
@@ -340,7 +338,7 @@
             padding: 15px;
             border: none;
             border-radius: 5px;
-            background-color: #ff6b6b;
+            background-color: #9a42ec;
             color: white;
             font-size: 1rem;
             font-weight: bold;
@@ -349,7 +347,7 @@
         }
 
         .contact-form button:hover {
-            background-color: #ff4b4b;
+            background-color: #7e2bc2;
         }
 
         .contact-info {
@@ -469,7 +467,7 @@
             <p>A passionate developer with expertise in</p>
             <span id="element"></span>
             <div class="buttons">
-                <button class="btn">Download Resume</button>
+                <button id="btn">Download Resume</button>
             </div>
     </section>
 
@@ -481,13 +479,13 @@
         </p>
         <div class="contact-info">
                 <div class="social-links">
-                    <a href="mailto:ritupan777@gmail.com" alt="email">
+                    <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!" target="_blank">
                         <img src="images/gmail.png" alt="Gmail">
                     </a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                    <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
                         <img src="images/linkedin.png" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/yourusername" target="_blank">
+                    <a href="https://github.com/Ritupan-Deka" target="_blank">
                         <img src="images/github.png" alt="GitHub">
                     </a> 
                 </div>
@@ -644,9 +642,6 @@
         // Call the function once to display initial time and message
         updateClock();
 
-
-
-
         var typed = new Typed('#element', {
             strings: ['Web Development.', 'Android Development.', 'Web Designing.', 'Machine Learning.'],
             typeSpeed: 60,
@@ -656,6 +651,14 @@
             showCursor:true,
             cursorChar: '|', 
         });
+
+        document.getElementById("download-resume").addEventListener("click", function () {
+            const link = document.createElement("a");
+            link.href = "assets/Resume_RITUPAN_.pdf"; // Path to your resume file
+            link.download = "Ritupan_Deka_Resume.pdf"; // Desired file name
+            link.click();
+        });
+
     </script>
 </body>
 </html>
