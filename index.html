@@ -25,14 +25,14 @@
         ::-webkit-scrollbar {
             display: none; /* Hides the scrollbar */
         }
-        a{
+        a {
             text-decoration: none;
         }
 
         /* Navigation Bar */
         nav {
             display: flex;
-            justify-content:space-evenly;
+            justify-content: space-evenly;
             align-items: center;
             padding: 10px 20px;
             background-color: #0d0f1d80;
@@ -42,18 +42,17 @@
             z-index: 1000;
         }
         
-        .left img{
+        .left img {
             display: inline-block;
             height: 50px;
             margin-right: 120px;
             transition: transform 0.3s ease;
         }
 
-        .left img:hover{
+        .left img:hover {
             cursor: pointer;
             transform: scale(1.2);
         }
-        
 
         #clock {
             text-align: center;
@@ -70,17 +69,16 @@
             margin-top: 5px;
         }
 
-
-        .center{
+        .center {
             transition: color 0.3s ease;
         }
-        #clock:hover{
-            cursor:none;
+        #clock:hover {
+            cursor: none;
             color: #9a42ec;
         }
         
         .right ul {
-            list-style:none;
+            list-style: none;
             display: flex;
             gap: 30px;
         }
@@ -99,29 +97,28 @@
 
         /* Hero Section */
         .hero {
-            padding: 190px 100px ;
+            padding: 190px 100px;
             margin-bottom: 80px;
-            text-align:center;
+            text-align: center;
         }
-        
 
-        .hero  h1 {
+        .hero h1 {
             font-size: 2.5rem;
             font-weight: 700;
             color: #fff;
             text-shadow: 0 0 5px #ccc;
             transition: text-shadow 0.3s ease;
         }
-        .hero h1:hover{
+        .hero h1:hover {
             text-shadow: 0 0 10px #ccc;
         }
 
-        .hero  p {
+        .hero p {
             font-size: 1.2rem;
             color: #ccc;
         }
 
-        .hero  span {
+        .hero span {
             display: inline-block;
             margin: 0;
             padding: 0;
@@ -140,15 +137,13 @@
             transition: background-color 0.3s ease;
         }
 
-        .hero  #btn:hover {
+        .hero #btn:hover {
             background-color: #7e2bc2;
         }
-
 
         /* About Section */
         #about {
             padding: 200px 50px;
-            background-color: #12182b;
             text-align: center;
         }
 
@@ -205,12 +200,6 @@
             transition: transform 0.3s ease;
         }
 
-        .skill img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
-        }
-
         .skill span {
             font-size: 1rem;
             color: white;
@@ -221,7 +210,6 @@
             transform: scale(1.1);
             cursor: pointer;
         }
-
 
         /* Projects Section */
         #projects {
@@ -284,6 +272,7 @@
             background-color: #9a42ec;
             color: #12182b;
         }
+
         /* Contact Section */
         #contact {
             background-color: #1a1f2a;
@@ -353,14 +342,13 @@
         .contact-info {
             font-size: 1.1rem;
             margin: 5rem;
-
         }
 
         .contact-info img {
             width: 25px;
         }
 
-        .contact-info icon,span {
+        .contact-info icon, span {
             display: flex;
             flex-direction: row;
             align-items: flex-end;
@@ -385,17 +373,16 @@
             transform: scale(1.1);
         }
 
-
         /* Footer Section */
         footer {
             background-color: #0d0f1d;
-            padding: 10px 0 ;
+            padding: 10px 0;
             color: #ccc;
             font-size: 0.8rem;
             text-align: center;
             position: fixed;
             bottom: 0;
-            height:2rem;
+            height: 2rem;
             width: 100%;
             z-index: 1000;
         }
@@ -435,7 +422,6 @@
                 margin-bottom: 20px;
             }
         }
-
     </style>
 </head>
 <body>
@@ -443,7 +429,7 @@
     <header>
         <nav>
             <div class="left">
-              <a href="#hero" ><img src="images/logo3.png" alt="Logo"></a>
+                <a href="#hero"><img src="images/logo3.png" alt="Logo"></a>
             </div>
             <div class="right">
                 <ul>
@@ -458,38 +444,37 @@
                 <p id="day-message">Have a nice day!</p> <!-- Day-specific message will go here -->
             </div>
         </nav>
-
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-            <h1>Hi, I'm Ritupan Deka</h1>
-            <p>A passionate developer with expertise in</p>
-            <span id="element"></span>
-            <div class="buttons">
-                <button id="btn">Download Resume</button>
-            </div>
+        <h1>Hi, I'm Ritupan Deka</h1>
+        <p>A passionate developer with expertise in</p>
+        <span id="element"></span>
+        <div class="buttons">
+            <button id="btn">Download Resume</button>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I am a Computer Science and Engineering  Graduate. I specialize in Android and Web development, with hands-on experience in building dynamic and scalable applications. I am passionate about learning new technologies and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as well, and I enjoy tackling challenging problems.
+            I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with hands-on experience in building dynamic and scalable applications. I am passionate about learning new technologies and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as well, and I enjoy tackling challenging problems.
         </p>
         <div class="contact-info">
-                <div class="social-links">
-                    <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!" target="_blank">
-                        <img src="images/gmail.png" alt="Gmail">
-                    </a>
-                    <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
-                        <img src="images/linkedin.png" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/Ritupan-Deka" target="_blank">
-                        <img src="images/github.png" alt="GitHub">
-                    </a> 
-                </div>
+            <div class="social-links">
+                <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!" target="_blank">
+                    <img src="images/gmail.png" alt="Gmail">
+                </a>
+                <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/Ritupan-Deka" target="_blank">
+                    <img src="images/github.png" alt="GitHub">
+                </a> 
             </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
@@ -529,7 +514,6 @@
         </div>
     </section>
 
-
     <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
@@ -561,7 +545,6 @@
         </div>
     </section>
 
-    
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Ritupan Deka. All Rights Reserved.</p>
@@ -569,8 +552,9 @@
 
     <!-- Type.js Animation Script -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-
         // Function to get the current time
         function updateClock() {
             const timeElement = document.getElementById("time");
@@ -627,17 +611,16 @@
             backSpeed: 30, 
             backDelay: 1000, 
             loop: true,
-            showCursor:true,
+            showCursor: true,
             cursorChar: '|', 
         });
 
         document.getElementById("btn").addEventListener("click", function () {
             const link = document.createElement("a");
-            link.href = "assets/Resume_RITUPAN_.pdf"; // Path to your resume file
-            link.download = "Ritupan_Deka_Resume.pdf"; // Desired file name
+            link.href = "assets/Resume_RITUPAN_.pdf"; 
+            link.download = "Ritupan_Deka_Resume.pdf"; 
             link.click();
         });
-
     </script>
 </body>
 </html>
