@@ -9,7 +9,6 @@
         rel="stylesheet">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +22,7 @@
             line-height: 1.6;
             font-size: 16px;
             z-index: -1;
-            
+
         }
 
         .ripple-container {
@@ -77,6 +76,7 @@
 
         #day-message {
             font-size: 1.2rem;
+            font-weight: 400;
             margin-top: 5px;
         }
 
@@ -118,24 +118,24 @@
             font-size: 2.5rem;
             font-weight: 700;
             color: #fff;
-            text-shadow: 0 0 5px #ccc;
+            text-shadow: 0 0 5px #eee;
             transition: text-shadow 0.3s ease;
         }
 
         .hero h1:hover {
-            text-shadow: 0 0 10px #ccc;
+            text-shadow: 0 0 10px #eee;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #ccc;
+            color: #eee;
         }
 
         .hero span {
             display: inline-block;
             margin: 0;
             padding: 0;
-            color: #ccc;
+            color: #eee;
         }
 
         .hero #btn {
@@ -147,11 +147,12 @@
             border-radius: 5px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero #btn:hover {
             background-color: #7e2bc2;
+            transform: scale(1.1);
         }
 
         /* About Section */
@@ -169,7 +170,7 @@
         #about p {
             font-size: 1.2rem;
             text-align: justify;
-            color: #ccc;
+            color: #eee;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
@@ -183,45 +184,48 @@
         #skills h2 {
             text-align: center;
             color: white;
-            margin-bottom: 40px;
+            margin-top: -5rem;
+            margin-bottom: 2rem;
             font-size: 2.5rem;
         }
 
-        .skills-carousel {
+        .skills-category {
+            margin-bottom: 7px;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: row;
             gap: 20px;
+        }
+
+        .skills-category h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            width: 20rem;
+            color: #9a42ec;
+            margin: 0 0 0 20rem;
+        }
+
+        .skill-tags {
+            display: flex;
             flex-wrap: nowrap;
+            gap: 10px;
             overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
         }
 
-        .skills-carousel::-webkit-scrollbar {
-            display: none;  /* Chrome, Safari, and Edge */
-        }
-
-        .skill {
-            background-color: #1a1f2a;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 100px;
-            max-width: 150px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .skill span {
+        .skill-tags span {
+            padding: 5px 10px;
+            border-radius: 20px;
+            color: #9a42ec;
             font-size: 1rem;
-            color: white;
             font-weight: bold;
+            text-decoration: none;
+            padding: 5px 20px;
+            border: 1px solid #9a42ec;
+            border-radius: 5px;
+            white-space: nowrap;
         }
-
-        .skill:hover {
-            transform: scale(1.1);
-            cursor: pointer;
-        }
+        .skill-tags span:hover{
+        background-color: #9a42ec;
+            color: #12182b;}
 
         /* Projects Section */
         #projects {
@@ -231,7 +235,7 @@
         #projects h2 {
             text-align: center;
             color: white;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             font-size: 2.5rem;
         }
 
@@ -264,7 +268,7 @@
 
         .project-card p {
             font-size: 1rem;
-            color: #ccc;
+            color: #eee;
             margin-bottom: 20px;
         }
 
@@ -388,7 +392,7 @@
         footer {
             background-color: #0d0f1d;
             padding: 10px 0;
-            color: #ccc;
+            color: #eee;
             font-size: 0.8rem;
             text-align: center;
             position: fixed;
@@ -455,7 +459,7 @@
                 </div>
                 <div id="clock" class="center">
                     <p id="time">12:00 PM</p>
-                    <p id="day-message">Have a nice day!</p> 
+                    <p id="day-message">Have a nice day!</p>
                 </div>
             </nav>
         </header>
@@ -500,36 +504,94 @@
         <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skills-carousel">
-                <div class="skill">
+            <div class="skills-category">
+                <h3>Languages</h3>
+                <div class="skill-tags">
+                    <span>C/C++</span>
+                    <span>MySQL</span>
+                    <span>SQL</span>
                     <span>HTML</span>
-                </div>
-                <div class="skill">
                     <span>CSS</span>
-                </div>
-                <div class="skill">
-                    <span>React</span>
-                </div>
-                <div class="skill">
                     <span>JavaScript</span>
                 </div>
-                <div class="skill">
-                    <span>TypeScript</span>
+            </div>
+
+            <div class="skills-category">
+                <h3>Frameworks</h3>
+                <div class="skill-tags">
+                    <span>Node.js</span>
+                    <span>Vite</span>
+                    <span>Express</span>
+                    <span>React.js</span>
+                    <span>Vue.js</span>
+                    <span>TensorFlow</span>
+                    <span>Keras</span>
                 </div>
-                <div class="skill">
-                    <span>Git</span>
+            </div>
+
+            <div class="skills-category">
+                <h3>Tools</h3>
+                <div class="skill-tags">
+                    <span>Git/GitHub</span>
+                    <span>Firebase</span>
+                    <span>REST API</span>
                 </div>
-                <div class="skill">
-                    <span>NextJS</span>
+            </div>
+
+            <div class="skills-category">
+                <h3>Platforms</h3>
+                <div class="skill-tags">
+                    <span>Linux</span>
+                    <span>GCP</span>
+                    <span>AWS</span>
                 </div>
-                <div class="skill">
-                    <span>Java</span>
+            </div>
+
+            <div class="skills-category">
+                <h3>Machine Learning/AI</h3>
+                <div class="skill-tags">
+                    <span>scikit-learn</span>
+                    <span>PyTorch</span>
+                    <span>Natural Language Processing (NLP)</span>
+                    <span>TensorFlow</span>
+                    <span>OpenCV</span>
                 </div>
-                <div class="skill">
-                    <span>C#</span>
+            </div>
+
+            <div class="skills-category">
+                <h3>Databases</h3>
+                <div class="skill-tags">
+                    <span>MongoDB</span>
+                    <span>Firebase Firestore</span>
                 </div>
-                <div class="skill">
-                    <span>Python</span>
+            </div>
+
+            <div class="skills-category">
+                <h3>Web Technologies</h3>
+                <div class="skill-tags">
+                    <span>Tailwind CSS</span>
+                    <span>GraphQL</span>
+                    <span>WebSockets</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Cryptography</h3>
+                <div class="skill-tags">
+                    <span>XOR</span>
+                    <span>Hamming Distance</span>
+                    <span>Cryptographic Algorithms</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Course Work</h3>
+                <div class="skill-tags">
+                    <span>OOP</span>
+                    <span>Data Structures and Algorithms</span>
+                    <span>Operating Systems</span>
+                    <span>Computer Networks</span>
+                    <span>DBMS</span>
                 </div>
             </div>
         </section>
@@ -605,7 +667,7 @@
         }
 
         setInterval(updateClock, 60000);
-       
+
         updateClock();
 
         const typed = new Typed('#element', {
