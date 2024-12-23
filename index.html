@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ritupan Deka - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         /* Reset margin and padding */
         * {
@@ -12,7 +14,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* General Styles */
         body {
             background-color: #12182b;
@@ -23,8 +25,10 @@
         }
 
         ::-webkit-scrollbar {
-            display: none; /* Hides the scrollbar */
+            display: none;
+            /* Hides the scrollbar */
         }
+
         a {
             text-decoration: none;
         }
@@ -41,7 +45,7 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         .left img {
             display: inline-block;
             height: 50px;
@@ -72,11 +76,12 @@
         .center {
             transition: color 0.3s ease;
         }
+
         #clock:hover {
             cursor: none;
             color: #9a42ec;
         }
-        
+
         .right ul {
             list-style: none;
             display: flex;
@@ -109,6 +114,7 @@
             text-shadow: 0 0 5px #ccc;
             transition: text-shadow 0.3s ease;
         }
+
         .hero h1:hover {
             text-shadow: 0 0 10px #ccc;
         }
@@ -122,9 +128,9 @@
             display: inline-block;
             margin: 0;
             padding: 0;
-            color: #ccc; 
+            color: #ccc;
         }
-        
+
         .hero #btn {
             background-color: #9a42ec;
             color: white;
@@ -182,11 +188,13 @@
             gap: 20px;
             flex-wrap: nowrap;
             overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
+            /* Firefox */
         }
 
         .skills-carousel::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, and Edge */
+            display: none;
+            /* Chrome, Safari, and Edge */
         }
 
         .skill {
@@ -348,7 +356,8 @@
             width: 25px;
         }
 
-        .contact-info icon, span {
+        .contact-info icon,
+        span {
             display: flex;
             flex-direction: row;
             align-items: flex-end;
@@ -424,12 +433,13 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header (Navigation Bar) -->
     <header>
         <nav>
             <div class="left">
-                <a href="#hero"><img src="images/logo3.png" alt="Logo"></a>
+                <a href="#hero"><img src="images/logo3.png" alt="Logo" loading="lazy"></a>
             </div>
             <div class="right">
                 <ul>
@@ -460,19 +470,23 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with hands-on experience in building dynamic and scalable applications. I am passionate about learning new technologies and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as well, and I enjoy tackling challenging problems.
+            I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with hands-on
+            experience in building dynamic and scalable applications. I am passionate about learning new technologies
+            and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as
+            well, and I enjoy tackling challenging problems.
         </p>
         <div class="contact-info">
             <div class="social-links">
-                <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!" target="_blank">
-                    <img src="images/gmail.png" alt="Gmail">
+                <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!"
+                    target="_blank">
+                    <img src="images/gmail.png" alt="Gmail" loading="lazy">
                 </a>
                 <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
-                    <img src="images/linkedin.png" alt="LinkedIn">
+                    <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
                 </a>
                 <a href="https://github.com/Ritupan-Deka" target="_blank">
-                    <img src="images/github.png" alt="GitHub">
-                </a> 
+                    <img src="images/github.png" alt="GitHub" loading="lazy">
+                </a>
             </div>
         </div>
     </section>
@@ -534,7 +548,8 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or social media!</p>
+        <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or social
+            media!</p>
         <div class="contact-container">
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -571,32 +586,16 @@
             timeElement.textContent = formattedTime;
 
             // Get the day name and set a day-specific message
-            let dayMessage = "Have a nice day!";
-            switch(day) {
-                case 0:
-                    dayMessage = "Have a nice Sunday!";
-                    break;
-                case 1:
-                    dayMessage = "Have a nice Monday!";
-                    break;
-                case 2:
-                    dayMessage = "Have a nice Tuesday!";
-                    break;
-                case 3:
-                    dayMessage = "Have a nice Wednesday!";
-                    break;
-                case 4:
-                    dayMessage = "Have a nice Thursday!";
-                    break;
-                case 5:
-                    dayMessage = "Have a nice Friday!";
-                    break;
-                case 6:
-                    dayMessage = "Have a nice Saturday!";
-                    break;
-            }
-
-            dayMessageElement.textContent = dayMessage;
+            const dayMessages = [
+                "Have a nice Sunday!",
+                "Have a nice Monday!",
+                "Have a nice Tuesday!",
+                "Have a nice Wednesday!",
+                "Have a nice Thursday!",
+                "Have a nice Friday!",
+                "Have a nice Saturday!"
+            ];
+            dayMessageElement.textContent = dayMessages[day];
         }
 
         // Update the clock and day message every minute
@@ -605,22 +604,30 @@
         // Call the function once to display initial time and message
         updateClock();
 
-        var typed = new Typed('#element', {
-            strings: ['Web Development.', 'Android Development.', 'Little bit of Web Designing.', 'Machine Learning.','Cryptography.'],
+        // Initialize Typed.js for text animation
+        const typed = new Typed('#element', {
+            strings: [
+                'Web Development.',
+                'Android Development.',
+                'Little bit of Web Designing.',
+                'Machine Learning.',
+                'Cryptography.'
+            ],
             typeSpeed: 60,
-            backSpeed: 30, 
-            backDelay: 1000, 
+            backSpeed: 30,
+            backDelay: 1000,
             loop: true,
             showCursor: true,
-            cursorChar: '|', 
+            cursorChar: '|',
         });
 
         document.getElementById("btn").addEventListener("click", function () {
             const link = document.createElement("a");
-            link.href = "assets/Resume_RITUPAN_.pdf"; 
-            link.download = "Ritupan_Deka_Resume.pdf"; 
+            link.href = "assets/Resume_RITUPAN_.pdf";
+            link.download = "Ritupan_Deka_Resume.pdf";
             link.click();
         });
     </script>
 </body>
+
 </html>
