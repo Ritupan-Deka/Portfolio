@@ -7,6 +7,8 @@
     <title>Ritupan Deka - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap"
         rel="stylesheet">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script> -->
+
     <style>
         /* Reset margin and padding */
         * {
@@ -22,6 +24,14 @@
             font-family: 'Source Code Pro', monospace;
             line-height: 1.6;
             font-size: 16px;
+            z-index: -1;
+            
+        }
+
+        .ripple-container {
+            height: 100%;
+            width: 100%;
+            z-index: 1;
         }
 
         ::-webkit-scrollbar {
@@ -170,7 +180,6 @@
 
         /* Skills Section */
         #skills {
-            background-color: #12182b;
             padding: 200px 50px;
         }
 
@@ -221,7 +230,6 @@
 
         /* Projects Section */
         #projects {
-            background-color: #12182b;
             padding: 150px 50px;
         }
 
@@ -283,7 +291,6 @@
 
         /* Contact Section */
         #contact {
-            background-color: #1a1f2a;
             color: white;
             padding: 150px 50px;
             text-align: center;
@@ -435,131 +442,135 @@
 </head>
 
 <body>
-    <!-- Header (Navigation Bar) -->
-    <header>
-        <nav>
-            <div class="left">
-                <a href="#hero"><img src="images/logo3.png" alt="Logo" loading="lazy"></a>
-            </div>
-            <div class="right">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div id="clock" class="center">
-                <p id="time">12:00 PM</p> <!-- Current time will be displayed here -->
-                <p id="day-message">Have a nice day!</p> <!-- Day-specific message will go here -->
-            </div>
-        </nav>
-    </header>
+    <!-- The Ripple Container -->
+    <div class="ripple-container">
+        <!-- Header (Navigation Bar) -->
+        <header>
+            <nav>
+                <div class="left">
+                    <a href="#hero"><img src="images/logo3.png" alt="Logo" loading="lazy"></a>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="clock" class="center">
+                    <p id="time">12:00 PM</p> <!-- Current time will be displayed here -->
+                    <p id="day-message">Have a nice day!</p> <!-- Day-specific message will go here -->
+                </div>
+            </nav>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <h1>Hi, I'm Ritupan Deka</h1>
-        <p>A passionate developer with expertise in</p>
-        <span id="element"></span>
-        <div class="buttons">
-            <button id="btn">Download Resume</button>
-        </div>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <h1>Hi, I'm Ritupan Deka</h1>
+            <p>A passionate developer with expertise in</p>
+            <span id="element"></span>
+            <div class="buttons">
+                <button id="btn">Download Resume</button>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with hands-on
-            experience in building dynamic and scalable applications. I am passionate about learning new technologies
-            and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as
-            well, and I enjoy tackling challenging problems.
-        </p>
-        <div class="contact-info">
-            <div class="social-links">
-                <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!"
-                    target="_blank">
-                    <img src="images/gmail.png" alt="Gmail" loading="lazy">
-                </a>
-                <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
-                    <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
-                </a>
-                <a href="https://github.com/Ritupan-Deka" target="_blank">
-                    <img src="images/github.png" alt="GitHub" loading="lazy">
-                </a>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with
+                hands-on
+                experience in building dynamic and scalable applications. I am passionate about learning new
+                technologies
+                and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as
+                well, and I enjoy tackling challenging problems.
+            </p>
+            <div class="contact-info">
+                <div class="social-links">
+                    <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!"
+                        target="_blank">
+                        <img src="images/gmail.png" alt="Gmail" loading="lazy">
+                    </a>
+                    <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
+                    </a>
+                    <a href="https://github.com/Ritupan-Deka" target="_blank">
+                        <img src="images/github.png" alt="GitHub" loading="lazy">
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-carousel">
-            <div class="skill">
-                <span>HTML</span>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-carousel">
+                <div class="skill">
+                    <span>HTML</span>
+                </div>
+                <div class="skill">
+                    <span>CSS</span>
+                </div>
+                <div class="skill">
+                    <span>React</span>
+                </div>
+                <div class="skill">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill">
+                    <span>TypeScript</span>
+                </div>
+                <div class="skill">
+                    <span>Git</span>
+                </div>
+                <div class="skill">
+                    <span>NextJS</span>
+                </div>
+                <div class="skill">
+                    <span>Java</span>
+                </div>
+                <div class="skill">
+                    <span>C#</span>
+                </div>
+                <div class="skill">
+                    <span>Python</span>
+                </div>
             </div>
-            <div class="skill">
-                <span>CSS</span>
-            </div>
-            <div class="skill">
-                <span>React</span>
-            </div>
-            <div class="skill">
-                <span>JavaScript</span>
-            </div>
-            <div class="skill">
-                <span>TypeScript</span>
-            </div>
-            <div class="skill">
-                <span>Git</span>
-            </div>
-            <div class="skill">
-                <span>NextJS</span>
-            </div>
-            <div class="skill">
-                <span>Java</span>
-            </div>
-            <div class="skill">
-                <span>C#</span>
-            </div>
-            <div class="skill">
-                <span>Python</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <h3>Handwritten Text Recognition</h3>
-                <p>Developed a machine learning model for handwritten paragraph image-to-text conversion.</p>
-                <a href="#">View Project</a>
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Handwritten Text Recognition</h3>
+                    <p>Developed a machine learning model for handwritten paragraph image-to-text conversion.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Zero Watermarking for Medical Image</h3>
+                    <p>Created a technique for watermarking medical images while preserving their integrity.</p>
+                    <a href="#">View Project</a>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Zero Watermarking for Medical Image</h3>
-                <p>Created a technique for watermarking medical images while preserving their integrity.</p>
-                <a href="#">View Project</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or social
+                media!</p>
+            <div class="contact-container">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or social
-            media!</p>
-        <div class="contact-container">
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
+        </section>
+    </div>
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Ritupan Deka. All Rights Reserved.</p>
@@ -569,6 +580,9 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <!-- jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+
     <script>
         // Function to get the current time
         function updateClock() {
@@ -626,6 +640,26 @@
             link.href = "assets/Resume_RITUPAN_.pdf";
             link.download = "Ritupan_Deka_Resume.pdf";
             link.click();
+        });
+
+        $(document).ready(function () {
+            // Apply the ripples effect
+            $('.ripple-container').ripples({
+                resolution: 512,        // The resolution of the effect
+                dropRadius: 20,         // Radius of the ripple drop
+                perturbance: 0.04,      // Water ripple distortion intensity
+                interactive: true       // Enable interaction with mouse clicks
+            });
+
+            // Optionally, create random drops
+            setInterval(() => {
+                const x = Math.random();
+                const y = Math.random();
+                const dropRadius = 15; // Radius of the random drop
+                const strength = 0.04; // Ripple strength
+
+                $('.ripple-container').ripples('drop', x * $('.ripple-container').width(), y * $('.ripple-container').height(), dropRadius, strength);
+            }, 2000); // Create a random drop every 2 seconds
         });
     </script>
 </body>
