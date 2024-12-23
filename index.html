@@ -7,19 +7,17 @@
     <title>Ritupan Deka - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap"
         rel="stylesheet">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script> -->
 
     <style>
-        /* Reset margin and padding */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* General Styles */
         body {
-            background-color: #12182b;
+            background-color: #18244e;
             color: white;
             font-family: 'Source Code Pro', monospace;
             line-height: 1.6;
@@ -36,7 +34,6 @@
 
         ::-webkit-scrollbar {
             display: none;
-            /* Hides the scrollbar */
         }
 
         a {
@@ -197,13 +194,11 @@
             gap: 20px;
             flex-wrap: nowrap;
             overflow-x: auto;
-            scrollbar-width: none;
-            /* Firefox */
+            scrollbar-width: none; /* Firefox */
         }
 
         .skills-carousel::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, and Edge */
+            display: none;  /* Chrome, Safari, and Edge */
         }
 
         .skill {
@@ -459,8 +454,8 @@
                     </ul>
                 </div>
                 <div id="clock" class="center">
-                    <p id="time">12:00 PM</p> <!-- Current time will be displayed here -->
-                    <p id="day-message">Have a nice day!</p> <!-- Day-specific message will go here -->
+                    <p id="time">12:00 PM</p>
+                    <p id="day-message">Have a nice day!</p> 
                 </div>
             </nav>
         </header>
@@ -589,17 +584,14 @@
             const timeElement = document.getElementById("time");
             const dayMessageElement = document.getElementById("day-message");
 
-            // Get current date and time
             const now = new Date();
             const hours = now.getHours();
             const minutes = now.getMinutes();
             const day = now.getDay();
 
-            // Format time (e.g., 1:05 PM)
             const formattedTime = `${hours % 12 || 12}:${minutes < 10 ? '0' : ''}${minutes} ${hours >= 12 ? 'PM' : 'AM'}`;
             timeElement.textContent = formattedTime;
 
-            // Get the day name and set a day-specific message
             const dayMessages = [
                 "Have a nice Sunday!",
                 "Have a nice Monday!",
@@ -612,13 +604,10 @@
             dayMessageElement.textContent = dayMessages[day];
         }
 
-        // Update the clock and day message every minute
         setInterval(updateClock, 60000);
-
-        // Call the function once to display initial time and message
+       
         updateClock();
 
-        // Initialize Typed.js for text animation
         const typed = new Typed('#element', {
             strings: [
                 'Web Development.',
@@ -643,23 +632,25 @@
         });
 
         $(document).ready(function () {
-            // Apply the ripples effect
+
             $('.ripple-container').ripples({
                 resolution: 512,        // The resolution of the effect
                 dropRadius: 20,         // Radius of the ripple drop
-                perturbance: 0.04,      // Water ripple distortion intensity
-                interactive: true       // Enable interaction with mouse clicks
+                perturbance: 0.1,      // Water ripple distortion intensity
+                interactive: true,      // Enable interaction with mouse clicks
+                strength: 0.06          // The strength of the ripples
             });
 
-            // Optionally, create random drops
+            // Create random drops
             setInterval(() => {
                 const x = Math.random();
                 const y = Math.random();
                 const dropRadius = 15; // Radius of the random drop
-                const strength = 0.04; // Ripple strength
+                const strength = 0.06; // Ripple strength
+                const perturbance = 0.1; // Water ripple distortion intensity
 
                 $('.ripple-container').ripples('drop', x * $('.ripple-container').width(), y * $('.ripple-container').height(), dropRadius, strength);
-            }, 2000); // Create a random drop every 2 seconds
+            }, 1000); // Create a random drop every 1 seconds
         });
     </script>
 </body>
