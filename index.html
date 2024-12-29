@@ -11,6 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --background-color: #2C3E50; /* Dark Blue background color */
+            --text-color: #FFFFFF; /* White text color */
+            --accent-color: #1ABC9C; /* Teal color */
+            --hover-accent-color: #3b5773; /* Darker Teal hover color */
+            --shadow-color: #00e1ffb6; /* Shadow color */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,14 +26,38 @@
         }
 
         body {
-            background-color: #18244e;
-            color: white;
-            /*font-family: 'Source Code Pro', monospace;*/
+            background-color: var(--background-color);
+            color: var(--text-color);
             font-family: "Ysabeau SC", serif;
             line-height: 1.6;
-            font-size: 3rem;
+            font-size: 3.51rem;
             z-index: -1;
+            text-align: center;
+        }
 
+        /* Responsive font sizes */
+        @media (max-width: 1200px) {
+            body {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            body {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                font-size: 1.5rem;
+            }
         }
 
         .ripple-container {
@@ -48,11 +80,11 @@
             justify-content: space-evenly;
             align-items: center;
             padding: 10px 20px;
-            background-color: #0d0f1d00;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            color: var(--text-color);
         }
 
         .left img {
@@ -69,16 +101,16 @@
 
         #clock {
             text-align: center;
-            color: white;
+            color: var(--text-color);
         }
 
         #time {
-            font-size: 1.8rem;
+            font-size: 2.106rem;
             font-weight: bold;
         }
 
         #day-message {
-            font-size: 1.2rem;
+            font-size: 1.404rem;
             font-weight: 400;
             margin-top: 5px;
         }
@@ -89,7 +121,7 @@
 
         #clock:hover {
             cursor: pointer;
-            color: #9a42ec;
+            color: var(--accent-color);
         }
 
         .right ul {
@@ -99,81 +131,137 @@
         }
 
         .right ul li a {
-            color: white;
-            font-size: 1.1rem;
+            color: var(--text-color);
+            font-size: 1.287rem;
             display: inline-block;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .right ul li a:hover {
-            color: #9a42ec;
+            color: var(--accent-color);
             transform: scale(1.2);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .right ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: var(--background-color);
+                width: 100%;
+                text-align: center;
+            }
+
+            .right ul.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .left {
+                order: 1;
+            }
+
+            .menu-icon {
+                order: 2;
+            }
+
+            #clock {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            #time {
+                font-size: 1.5rem;
+            }
+
+            #day-message {
+                font-size: 1rem;
+            }
+
+            .right ul li a {
+                font-size: 1rem;
+            }
         }
 
         /* Hero Section */
         .hero {
-            padding: 190px 100px;
-            margin-bottom: 80px;
+            padding: 150px 20px;
+            margin-bottom: 50px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.925rem;
             font-weight: 700;
-            color: #fff;
-            text-shadow: 0 0 5px #eee;
+            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--shadow-color);
             transition: text-shadow 0.3s ease;
         }
 
         .hero h1:hover {
-            text-shadow: 0 0 10px #eee;
+            text-shadow: 0 0 10px var(--shadow-color);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #eee;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            margin-bottom: -2rem;
         }
 
         .hero span {
             display: inline-block;
-            margin: 0;
+            font-size: 1.6rem;
             padding: 0;
-            color: #eee;
+            color: var(--text-color);
         }
 
         .hero #btn {
-            background-color: #9a42ec;
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--background-color);
             padding: 12px 24px;
             margin-top: 30px;
             border: none;
             border-radius: 5px;
-            font-size: 1.1rem;
+            font-size: 1.287rem;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero #btn:hover {
-            background-color: #7e2bc2;
+            background-color: var(--hover-accent-color);
             transform: scale(1.1);
         }
 
         /* About Section */
         #about {
-            padding: 200px 50px;
+            padding: 150px 20px;
             text-align: center;
         }
 
         #about h2 {
-            font-size: 2.5rem;
-            color: white;
+            font-size: 2.925rem;
+            color: var(--accent-color);
             margin-bottom: 20px;
         }
 
         #about p {
-            font-size: 1.2rem;
+            font-size: 1.404rem;
             text-align: justify;
-            color: #eee;
+            color: var(--text-color);
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
@@ -181,140 +269,160 @@
 
         /* Skills Section */
         #skills {
-            padding: 200px 50px;
+            padding: 150px 20px;
+            text-align: center;
         }
 
         #skills h2 {
             text-align: center;
-            color: white;
+            color: var(--accent-color);
             margin-top: -5rem;
             margin-bottom: 2rem;
-            font-size: 2.5rem;
+            font-size: 2.925rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         .skills-category {
-            margin-bottom: 7px;
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
         }
 
         .skills-category h3 {
-            font-size: 1.5rem;
+            font-size: 1.755rem;
             font-weight: 700;
-            width: 20rem;
-            color: #9a42ec;
-            margin: 0 0 0 20rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
         }
 
         .skill-tags {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 10px;
-            overflow-x: auto;
+            justify-content: center;
         }
 
         .skill-tags span {
             padding: 5px 10px;
             border-radius: 20px;
-            color: #9a42ec;
+            color: var(--accent-color);
             font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
-            padding: 5px 20px;
-            border: 1px solid #9a42ec;
+            border: 1px solid var(--accent-color);
             border-radius: 5px;
             white-space: nowrap;
         }
 
         .skill-tags span:hover {
-            background-color: #9a42ec;
-            color: #12182b;
+            background-color: var(--accent-color);
+            color: var(--background-color);
+        }
+
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-category {
+                width: 90%;
+            }
         }
 
         /* Projects Section */
         #projects {
-            padding: 150px 50px;
+            padding: 150px 20px;
         }
 
         #projects h2 {
             text-align: center;
-            color: white;
+            color: var(--accent-color);
             margin-bottom: 50px;
-            font-size: 2.5rem;
+            font-size: 2.925rem;
         }
 
         .projects-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
         }
 
         .project-card {
-            background-color: #1a1f2a;
-            width: 250px;
-            padding: 30px;
+            background-color: var(--background-color);
+            width: 300px;
+            padding: 20px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            color: var(--text-color);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
+            background-color: var(--hover-accent-color);
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
-            color: #9a42ec;
+            font-size: 1.755rem;
+            color: var(--accent-color);
             margin-bottom: 15px;
         }
 
         .project-card p {
-            font-size: 1rem;
-            color: #eee;
-            margin-bottom: 20px;
+            font-size: 1.17rem;
+            color: var(--text-color);
         }
 
         .project-card a {
             display: inline-block;
-            color: #9a42ec;
-            font-size: 1rem;
+            color: var(--accent-color);
+            font-size: 1.17rem;
             text-decoration: none;
             padding: 10px 20px;
-            border: 1px solid #9a42ec;
+            border: 1px solid var(--accent-color);
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .project-card a:hover {
-            background-color: #9a42ec;
-            color: #12182b;
+            background-color: var(--accent-color);
+            color: var(--background-color);
         }
 
         /* Contact Section */
         #contact {
-            color: white;
-            padding: 150px 50px;
+            color: var(--text-color);
+            padding: 150px 20px;
             text-align: center;
         }
 
         #contact h2 {
-            font-size: 2.5rem;
+            font-size: 2.925rem;
+            color: var(--accent-color);
             margin-bottom: 20px;
         }
 
         #contact p {
-            font-size: 1.2rem;
+            font-size: 1.404rem;
             margin-bottom: 40px;
+            color: var(--text-color);
         }
 
         .contact-container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 40px;
         }
 
@@ -324,42 +432,43 @@
             gap: 15px;
             width: 100%;
             max-width: 500px;
+            color: var(--text-color);
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             padding: 15px;
-            border: none;
+            border: 1px solid var(--accent-color);
             border-radius: 5px;
-            background-color: #2b2f3a;
-            color: white;
-            font-size: 1rem;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: 0.9rem;
         }
 
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
-            color: #888;
+            color: var(--text-color);
         }
 
         .contact-form button {
             padding: 15px;
             border: none;
             border-radius: 5px;
-            background-color: #9a42ec;
-            color: white;
-            font-size: 1rem;
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            font-size: 0.9rem;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: #7e2bc2;
+            background-color: var(--hover-accent-color);
         }
 
         .contact-info {
-            font-size: 1.1rem;
+            font-size: 1.287rem;
             margin: 5rem;
         }
 
@@ -395,51 +504,242 @@
 
         /* Footer Section */
         footer {
-            background-color: #0d0f1d00;
             padding: 10px 0;
-            color: #eee;
-            font-size: 0.8rem;
+            color: var(--text-color);
+            font-size: 0.936rem;
             text-align: center;
             position: fixed;
             bottom: 0;
-            height: 2rem;
+            height: 2.5rem;
             width: 100%;
             z-index: 1000;
         }
 
+
+        /* Message below the navigation bar */
+        .below-nav-msg {
+            position: fixed;
+            width: 100%;
+            text-align: center;
+            color: var(--text-color);
+            padding: 10px 0;
+            font-size: 1rem;
+            z-index: 1001;
+            transition: opacity 0.3s ease;
+        }
+
+        .below-nav-msg:hover {
+            opacity: 0.7;
+        }
+
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
+            body {
+                font-size: 2rem;
+            }
+
             .hero {
-                flex-direction: column;
-                text-align: center;
+                padding: 100px 10px;
             }
 
-            .hero .leftSection {
-                max-width: 100%;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .hero .rightSection img {
-                width: 300px;
+            .hero p {
+                font-size: 1.2rem;
             }
 
-            .skills-container {
-                flex-direction: column;
-                align-items: center;
+            .hero #btn {
+                font-size: 1rem;
             }
 
-            .skill-card {
-                width: 90%;
-                margin-bottom: 20px;
+            #about {
+                padding: 100px 10px;
             }
 
-            .projects-container {
-                flex-direction: column;
-                align-items: center;
+            #about h2 {
+                font-size: 2.5rem;
+            }
+
+            #about p {
+                font-size: 1.2rem;
+            }
+
+            #skills {
+                padding: 100px 10px;
+            }
+
+            #skills h2 {
+                font-size: 2.5rem;
+            }
+
+            .skills-category h3 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+            .skill-tags span {
+                font-size: 1rem;
+            }
+
+            #projects {
+                padding: 100px 10px;
+            }
+
+            #projects h2 {
+                font-size: 2.5rem;
             }
 
             .project-card {
                 width: 90%;
                 margin-bottom: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .project-card p {
+                font-size: 1rem;
+            }
+
+            .project-card a {
+                font-size: 1rem;
+            }
+
+            #contact {
+                padding: 100px 10px;
+            }
+
+            #contact h2 {
+                font-size: 2.5rem;
+            }
+
+            #contact p {
+                font-size: 1.2rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.8rem;
+            }
+
+            .contact-form button {
+                font-size: 0.8rem;
+            }
+
+            .contact-info {
+                font-size: 1rem;
+            }
+
+            .bottom-right-msg {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 80px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero #btn {
+                font-size: 0.8rem;
+            }
+
+            #about {
+                padding: 80px 10px;
+            }
+
+            #about h2 {
+                font-size: 2rem;
+            }
+
+            #about p {
+                font-size: 1rem;
+            }
+
+            #skills {
+                padding: 80px 10px;
+            }
+
+            #skills h2 {
+                font-size: 2rem;
+            }
+
+            .skills-category h3 {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+
+            .skill-tags span {
+                font-size: 0.8rem;
+            }
+
+            #projects {
+                padding: 80px 10px;
+            }
+
+            #projects h2 {
+                font-size: 2rem;
+            }
+
+            .project-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-card p {
+                font-size: 0.8rem;
+            }
+
+            .project-card a {
+                font-size: 0.8rem;
+            }
+
+            #contact {
+                padding: 80px 10px;
+            }
+
+            #contact h2 {
+                font-size: 2rem;
+            }
+
+            #contact p {
+                font-size: 1rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.7rem;
+            }
+
+            .contact-form button {
+                font-size: 0.7rem;
+            }
+
+            .contact-info {
+                font-size: 0.8rem;
+            }
+
+            .bottom-right-msg {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -454,8 +754,9 @@
                 <div class="left">
                     <a href="#hero"><img src="images/logo3.png" alt="Logo" loading="lazy"></a>
                 </div>
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
                 <div class="right">
-                    <ul>
+                    <ul id="nav-menu">
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
@@ -468,6 +769,11 @@
                 </div>
             </nav>
         </header>
+
+        <!-- Message below the navigation bar -->
+        <div class="below-nav-msg">
+            Use nav bar
+        </div>
 
         <!-- Hero Section -->
         <section class="hero" id="hero">
@@ -509,94 +815,82 @@
         <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skills-category">
-                <h3>Languages</h3>
-                <div class="skill-tags">
-                    <span>C/C++</span>
-                    <span>MySQL</span>
-                    <span>SQL</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span>C/C++</span>
+                        <span>MySQL</span>
+                        <span>SQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3>Frameworks</h3>
-                <div class="skill-tags">
-                    <span>Node.js</span>
-                    <span>Vite</span>
-                    <span>Express</span>
-                    <span>React.js</span>
-                    <span>Vue.js</span>
-                    <span>TensorFlow</span>
-                    <span>Keras</span>
+                <div class="skills-category">
+                    <h3>Frameworks</h3>
+                    <div class="skill-tags">
+                        <span>Node.js</span>
+                        <span>Vite</span>
+                        <span>Express</span>
+                        <span>React.js</span>
+                        <span>Vue.js</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3>Tools</h3>
-                <div class="skill-tags">
-                    <span>Git/GitHub</span>
-                    <!-- <span>Firebase</span>
-                    <span>REST API</span> -->
+                <div class="skills-category">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span>Git/GitHub</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3>Platforms</h3>
-                <div class="skill-tags">
-                    <span>Linux</span>
-                    <span>GCP</span>
-                    <span>AWS</span>
+                <div class="skills-category">
+                    <h3>Platforms</h3>
+                    <div class="skill-tags">
+                        <span>Linux</span>
+                        <span>GCP</span>
+                        <span>AWS</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3>Machine Learning/AI</h3>
-                <div class="skill-tags">
-                    <span>scikit-learn</span>
-                    <span>PyTorch</span>
-                    <span>Natural Language Processing (NLP)</span>
-                    <span>TensorFlow</span>
-                    <span>OpenCV</span>
+                <div class="skills-category">
+                    <h3>Machine Learning/AI</h3>
+                    <div class="skill-tags">
+                        <span>scikit-learn</span>
+                        <span>PyTorch</span>
+                        <span>Natural Language Processing (NLP)</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3>Databases</h3>
-                <div class="skill-tags">
-                    <span>MongoDB</span>
-                    <!-- <span>Firebase Firestore</span> -->
+                <div class="skills-category">
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span>MongoDB</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3>Web Technologies</h3>
-                <div class="skill-tags">
-                    <span>Tailwind CSS</span>
-                    <!-- <span>GraphQL</span> -->
-                    <!-- <span>WebSockets</span> -->
+                <div class="skills-category">
+                    <h3>Web Technologies</h3>
+                    <div class="skill-tags">
+                        <span>Tailwind CSS</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- <div class="skills-category">
-                <h3>Cryptography</h3>
-                <div class="skill-tags">
-                    <span>XOR</span>
-                    <span>Hamming Distance</span>
-                    <span>Cryptographic Algorithms</span>
-                </div>
-            </div> -->
-
-            <div class="skills-category">
-                <h3>Course Work</h3>
-                <div class="skill-tags">
-                    <span>OOP</span>
-                    <span>Data Structures and Algorithms</span>
-                    <span>Operating Systems</span>
-                    <span>Computer Networks</span>
-                    <span>DBMS</span>
+                <div class="skills-category">
+                    <h3>Course Work</h3>
+                    <div class="skill-tags">
+                        <span>OOP</span>
+                        <span>Data Structures and Algorithms</span>
+                        <span>Operating Systems</span>
+                        <span>Computer Networks</span>
+                        <span>DBMS</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -633,6 +927,8 @@
             </div>
         </section>
     </div>
+
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Ritupan Deka. All Rights Reserved.</p>
@@ -716,9 +1012,14 @@
             //    const strength = 0.06; // Ripple strength
             //    const perturbance = 0.1; // Water ripple distortion intensity
 
-            //                $('.ripple-container').ripples('drop', x * $('.ripple-container').width(), y * $('.ripple-container').height(), dropRadius, strength);
+            //                $('.ripple-container').ripples('drop', x * $('.ripple-container').width(), y * $('..ripple-container').height(), dropRadius, strength);
             //          }, 1000); // Create a random drop every 1 seconds
         });
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+        }
     </script>
 </body>
 
