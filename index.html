@@ -12,11 +12,11 @@
 
     <style>
         :root {
-            --background-color: #2C3E50; /* Dark Blue background color */
-            --text-color: #FFFFFF; /* White text color */
-            --accent-color: #1ABC9C; /* Teal color */
-            --hover-accent-color: #3b5773; /* Darker Teal hover color */
-            --shadow-color: #00e1ffb6; /* Shadow color */
+            --background-color: #2C3E50; 
+            --text-color: #FFFFFF; 
+            --accent-color: #1ABC9C;
+            --hover-accent-color: #3b5773; 
+            --shadow-color: #00e1ffb6; 
         }
 
         * {
@@ -516,7 +516,7 @@
         }
 
 
-        /* Message below the navigation bar */
+        /* Message */
         .below-nav-msg {
             position: fixed;
             width: 100%;
@@ -770,7 +770,7 @@
             </nav>
         </header>
 
-        <!-- Message below the navigation bar -->
+        <!-- Message -->
         <div class="below-nav-msg">
             Use nav bar
         </div>
@@ -997,23 +997,23 @@
         $(document).ready(function () {
 
             $('.ripple-container').ripples({
-                resolution: 512,        // The resolution of the effect
-                dropRadius: 20,         // Radius of the ripple drop
-                perturbance: 0.1,      // Water ripple distortion intensity
-                interactive: true,      // Enable interaction with mouse clicks
-                strength: 0.06          // The strength of the ripples
+                resolution: 512,       
+                dropRadius: 20,         
+                perturbance: 0.1,     
+                interactive: true,    
+                strength: 0.06         
             });
 
             // Create random drops
             // setInterval(() => {
             //   const x = Math.random();
             // const y = Math.random();
-            //    const dropRadius = 15; // Radius of the random drop
-            //    const strength = 0.06; // Ripple strength
-            //    const perturbance = 0.1; // Water ripple distortion intensity
+            //    const dropRadius = 15; 
+            //    const strength = 0.06; 
+            //    const perturbance = 0.1; 
 
             //                $('.ripple-container').ripples('drop', x * $('.ripple-container').width(), y * $('..ripple-container').height(), dropRadius, strength);
-            //          }, 1000); // Create a random drop every 1 seconds
+            //          }, 1000); 
         });
 
         function toggleMenu() {
