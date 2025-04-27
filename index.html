@@ -12,17 +12,18 @@
 
     <style>
         :root {
-            --background-color: #2C3E50; 
-            --text-color: #FFFFFF; 
+            --background-color: #2C3E50;
+            --text-color: #FFFFFF;
             --accent-color: #1ABC9C;
-            --hover-accent-color: #3b5773; 
-            --shadow-color: #00e1ffb6; 
+            --hover-accent-color: #3b5773;
+            --shadow-color: #00e1ffb6;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         body {
@@ -34,6 +35,14 @@
             z-index: -1;
             text-align: center;
         }
+
+        .content, nav ,footer, .below-nav-msg{
+            transform: scale(0.80);
+            /* Slightly zoom out */
+            transform-origin: top center;
+            /* Keep the zoom centered */
+
+        } 
 
         /* Responsive font sizes */
         @media (max-width: 1200px) {
@@ -139,7 +148,6 @@
 
         .right ul li a:hover {
             color: var(--accent-color);
-            transform: scale(1.2);
         }
 
         .menu-icon {
@@ -276,7 +284,7 @@
         #skills h2 {
             text-align: center;
             color: var(--accent-color);
-            margin-top: -5rem;
+            margin-top: -3rem;
             margin-bottom: 2rem;
             font-size: 2.925rem;
         }
@@ -469,7 +477,8 @@
 
         .contact-info {
             font-size: 1.287rem;
-            margin: 5rem;
+            margin: 5rem 0;
+            z-index: 1000;
         }
 
         .contact-info img {
@@ -499,7 +508,7 @@
         }
 
         .social-links a:hover img {
-            transform: scale(1.1);
+            transform: scale(1);
         }
 
         /* Footer Section */
@@ -775,157 +784,161 @@
             Use nav bar
         </div>
 
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <h1>Hi, I'm Ritupan Deka</h1>
-            <p>A passionate developer with expertise in</p>
-            <span id="element"></span>
-            <div class="buttons">
-                <button id="btn">Download Resume</button>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with
-                hands-on
-                experience in building dynamic and scalable applications. I am passionate about learning new
-                technologies
-                and applying them to real-world problems. I have experience with Machine Learning and Cloud Computing as
-                well, and I enjoy tackling challenging problems.
-            </p>
-            <div class="contact-info">
-                <div class="social-links">
-                    <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!"
-                        target="_blank">
-                        <img src="images/gmail.png" alt="Gmail" loading="lazy">
-                    </a>
-                    <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
-                        <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
-                    </a>
-                    <a href="https://github.com/Ritupan-Deka" target="_blank">
-                        <img src="images/github.png" alt="GitHub" loading="lazy">
-                    </a>
+        <div class="content">
+            <!-- Hero Section -->
+            <section class="hero" id="hero">
+                <h1>Hi, I'm Ritupan Deka</h1>
+                <p>A passionate developer with expertise in</p>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button id="btn">Download Resume</button>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span>C/C++</span>
-                        <span>MySQL</span>
-                        <span>SQL</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+            <!-- About Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with
+                    hands-on
+                    experience in building dynamic and scalable applications. I am passionate about learning new
+                    technologies
+                    and applying them to real-world problems. I have experience with Machine Learning and Cloud
+                    Computing as
+                    well, and I enjoy tackling challenging problems.
+                </p>
+                <div class="contact-info">
+                    <div class="social-links">
+                        <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!"
+                            target="_blank">
+                            <img src="images/gmail.png" alt="Gmail" loading="lazy">
+                        </a>
+                        <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
+                            <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
+                        </a>
+                        <a href="https://github.com/Ritupan-Deka" target="_blank">
+                            <img src="images/github.png" alt="GitHub" loading="lazy">
+                        </a>
                     </div>
                 </div>
+            </section>
 
-                <div class="skills-category">
-                    <h3>Frameworks</h3>
-                    <div class="skill-tags">
-                        <span>Node.js</span>
-                        <span>Vite</span>
-                        <span>Express</span>
-                        <span>React.js</span>
-                        <span>Vue.js</span>
-                        <span>TensorFlow</span>
-                        <span>Keras</span>
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span>C/C++</span>
+                            <span>MySQL</span>
+                            <span>SQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Frameworks</h3>
+                        <div class="skill-tags">
+                            <span>Node.js</span>
+                            <span>Vite</span>
+                            <span>Express</span>
+                            <span>React.js</span>
+                            <span>Vue.js</span>
+                            <span>TensorFlow</span>
+                            <span>Keras</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Tools</h3>
+                        <div class="skill-tags">
+                            <span>Git/GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Platforms</h3>
+                        <div class="skill-tags">
+                            <span>Linux</span>
+                            <span>GCP</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Machine Learning/AI</h3>
+                        <div class="skill-tags">
+                            <span>scikit-learn</span>
+                            <span>PyTorch</span>
+                            <span>Natural Language Processing</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Databases</h3>
+                        <div class="skill-tags">
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Web Technologies</h3>
+                        <div class="skill-tags">
+                            <span>Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Course Work</h3>
+                        <div class="skill-tags">
+                            <span>OOP</span>
+                            <span>Data Structures and Algorithms</span>
+                            <span>Operating Systems</span>
+                            <span>Computer Networks</span>
+                            <span>DBMS</span>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="skills-category">
-                    <h3>Tools</h3>
-                    <div class="skill-tags">
-                        <span>Git/GitHub</span>
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2>My Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <h3>Handwritten Text Recognition</h3>
+                        <p>Developed a machine learning model for handwritten paragraph image-to-text conversion.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Zero Watermarking for Medical Image</h3>
+                        <p>Created a technique for watermarking medical images while preserving their integrity.</p>
+                        <a href="#">View Project</a>
                     </div>
                 </div>
+            </section>
 
-                <div class="skills-category">
-                    <h3>Platforms</h3>
-                    <div class="skill-tags">
-                        <span>Linux</span>
-                        <span>GCP</span>
-                        <span>AWS</span>
-                    </div>
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or
+                    social
+                    media!</p>
+                <div class="contact-container">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
                 </div>
-
-                <div class="skills-category">
-                    <h3>Machine Learning/AI</h3>
-                    <div class="skill-tags">
-                        <span>scikit-learn</span>
-                        <span>PyTorch</span>
-                        <span>Natural Language Processing (NLP)</span>
-                        <span>TensorFlow</span>
-                        <span>OpenCV</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Databases</h3>
-                    <div class="skill-tags">
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Web Technologies</h3>
-                    <div class="skill-tags">
-                        <span>Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Course Work</h3>
-                    <div class="skill-tags">
-                        <span>OOP</span>
-                        <span>Data Structures and Algorithms</span>
-                        <span>Operating Systems</span>
-                        <span>Computer Networks</span>
-                        <span>DBMS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <h3>Handwritten Text Recognition</h3>
-                    <p>Developed a machine learning model for handwritten paragraph image-to-text conversion.</p>
-                    <a href="#">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>Zero Watermarking for Medical Image</h3>
-                    <p>Created a technique for watermarking medical images while preserving their integrity.</p>
-                    <a href="#">View Project</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or social
-                media!</p>
-            <div class="contact-container">
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 
 
@@ -997,11 +1010,11 @@
         $(document).ready(function () {
 
             $('.ripple-container').ripples({
-                resolution: 512,       
-                dropRadius: 20,         
-                perturbance: 0.1,     
-                interactive: true,    
-                strength: 0.06         
+                resolution: 512,
+                dropRadius: 20,
+                perturbance: 0.1,
+                interactive: true,
+                strength: 0.06
             });
 
             // Create random drops
@@ -1020,6 +1033,202 @@
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('show');
         }
+    </script>
+
+    <!-- Add Anime.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script>
+        // Cool animations for various elements
+        document.addEventListener("DOMContentLoaded", function () {
+            // Create intersection observer for all animated sections
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Trigger section-specific animations
+                        switch (entry.target.id) {
+                            case 'hero':
+                                animateHero();
+                                break;
+                            case 'about':
+                                animateAbout();
+                                break;
+                            case 'skills':
+                                animateSkills();
+                                break;
+                            case 'projects':
+                                animateProjects();
+                                break;
+                            case 'contact':
+                                animateContact();
+                                break;
+                        }
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            // Observe all main sections
+            ['hero', 'about', 'skills', 'projects', 'contact'].forEach(id => {
+                observer.observe(document.getElementById(id));
+            });
+
+            // Hero section animation
+            function animateHero() {
+                anime({
+                    targets: '.hero h1',
+                    translateY: [-50, 0],
+                    rotate: [-10, 0],
+                    opacity: [0, 1],
+                    duration: 1000,
+                    easing: 'spring(1, 80, 10, 0)'
+                });
+
+                anime({
+                    targets: ['.hero p', '.hero span'],
+                    translateX: [-100, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(200),
+                    duration: 600,
+                });
+
+                anime({
+                    targets: '.hero #btn',
+                    scale: [0, 1],
+                    opacity: [0, 1],
+                    delay: 500,
+                    duration: 600,
+                    easing: 'easeInBack'
+                });
+            }
+
+            // About section animation
+            function animateAbout() {
+                anime({
+                    targets: '#about h2',
+                    translateY: [-30, 0],
+                    opacity: [0, 1],
+                    duration: 600
+                });
+
+                anime({
+                    targets: '#about p',
+                    translateX: [-50, 0],
+                    opacity: [0, 1],
+                    delay: 400,
+                    duration: 800
+                });
+
+                anime({
+                    targets: '.social-links img',
+                    scale: [0, 1],
+                    rotate: ['180deg', '0deg'],
+                    delay: anime.stagger(100),
+                    duration: 600,
+                    easing: 'easeOutElastic(1, .5)'
+                });
+            }
+
+            // Skills section animation
+            function animateSkills() {
+                anime({
+                    targets: '#skills h2',
+                    translateY: [-30, 0],
+                    opacity: [0, 1],
+                    duration: 600
+                });
+
+                anime({
+                    targets: '.skills-category',
+                    scale: [0.8, 1],
+                    opacity: [0, 1],
+                    delay: anime.stagger(150),
+                    duration: 600,
+                    easing: 'easeOutQuad'
+                });
+
+                anime({
+                    targets: '.skill-tags span',
+                    translateY: [20, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(30, { start: 500 }),
+                    duration: 600,
+                    easing: 'easeOutBounce'
+                });
+            }
+
+            // Projects section animation
+            function animateProjects() {
+                anime({
+                    targets: '#projects h2',
+                    translateY: [-30, 0],
+                    opacity: [0, 1],
+                    duration: 600
+                });
+
+                anime({
+                    targets: '.project-card',
+                    translateX: function (el, i) {
+                        return [i % 2 === 0 ? -100 : 100, 0];
+                    },
+                    rotateY: [45, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(200),
+                    duration: 800,
+                    easing: 'easeOutQuint'
+                });
+            }
+
+            // Contact section animation
+            function animateContact() {
+                anime({
+                    targets: '#contact h2, #contact p',
+                    translateY: [-30, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(200),
+                    duration: 600
+                });
+
+                anime({
+                    targets: '.contact-form input, .contact-form textarea',
+                    translateX: [-150, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(100, { start: 400 }),
+                    duration: 600,
+                    easing: 'easeOutQuad'
+                });
+
+                anime({
+                    targets: '.contact-form button',
+                    scale: [0, 1],
+                    opacity: [0, 1],
+                    delay: 1000,
+                    duration: 600,
+                    easing: 'easeOutBack'
+                });
+            }
+
+            // Hover effects for social media icons
+            document.querySelectorAll('.social-links img').forEach(icon => {
+                icon.addEventListener('mouseover', () => {
+                    anime({
+                        targets: icon,
+                        scale: 1.2,
+                        rotate: '360deg',
+                        duration: 600,
+                        easing: 'easeInOutBack'
+                    });
+                });
+                icon.addEventListener('mouseout', () => {
+                    anime({
+                        targets: icon,
+                        scale: 1,
+                        rotate: '0deg',
+                        duration: 600,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            });
+        });
     </script>
 </body>
 
