@@ -24,8 +24,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
+            height: 100%;
             background-color: var(--background-color);
             color: var(--text-color);
             font-family: "Ysabeau SC", serif;
@@ -410,7 +411,7 @@
         /* Contact Section */
         #contact {
             color: var(--text-color);
-            padding: 150px 20px;
+            padding: 150px 0 0 0;
             text-align: center;
         }
 
@@ -919,6 +920,12 @@
                         <p>Created a technique for watermarking medical images while preserving their integrity.</p>
                         <a href="#">View Project</a>
                     </div>
+                    <div class="project-card">
+                        <h3>Zero Watermarking for Medical Image</h3>
+                        <p>Created a technique for watermarking medical images while preserving their integrity.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                    
                 </div>
             </section>
 
@@ -1157,23 +1164,35 @@
 
             // Projects section animation
             function animateProjects() {
+                // Animate the heading with a bounce effect
                 anime({
                     targets: '#projects h2',
-                    translateY: [-30, 0],
+                    translateY: [-50, 0],
                     opacity: [0, 1],
-                    duration: 600
+                    duration: 800,
+                    easing: 'easeOutBounce'
                 });
 
+                // Animate project cards with a clean fade-in effect
                 anime({
                     targets: '.project-card',
-                    translateX: function (el, i) {
-                        return [i % 2 === 0 ? -100 : 100, 0];
-                    },
-                    rotateY: [45, 0],
+                    translateY: [50, 0],
                     opacity: [0, 1],
                     delay: anime.stagger(200),
-                    duration: 800,
-                    easing: 'easeOutQuint'
+                    duration: 100,
+                    easing: 'easeOutQuad',
+                    complete: function(anim) {
+                        // Add subtle floating animation after entrance
+                        anime({
+                            targets: '.project-card',
+                            translateY: [-5, 5],
+                            duration: 2000,
+                            direction: 'alternate',
+                            loop: true,
+                            easing: 'easeInOutSine',
+                            delay: anime.stagger(200)
+                        });
+                    }
                 });
             }
 
