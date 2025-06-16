@@ -7,7 +7,6 @@
     <title>Ritupan Deka - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap"
         rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
 
     <style>
@@ -24,53 +23,20 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             height: 100%;
             background-color: var(--background-color);
             color: var(--text-color);
             font-family: "Ysabeau SC", serif;
             line-height: 1.6;
-            font-size: 3.51rem;
+            font-size: 1.2rem;
             z-index: -1;
             text-align: center;
         }
 
-        .content, nav ,footer, .below-nav-msg{
-            transform: scale(0.80);
-            /* Slightly zoom out */
-            transform-origin: top center;
-            /* Keep the zoom centered */
-
-        } 
-
-        /* Responsive font sizes */
-        @media (max-width: 1200px) {
-            body {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            body {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            body {
-                font-size: 1.5rem;
-            }
-        }
-
         .ripple-container {
-            height: 100%;
+            min-height: 100vh;
             width: 100%;
             z-index: 1;
         }
@@ -94,6 +60,10 @@
             top: 0;
             z-index: 1000;
             color: var(--text-color);
+            /* background: rgba(44, 62, 80, 0.85);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: background 0.3s; */
         }
 
         .left img {
@@ -148,6 +118,17 @@
 
         .right ul li a:hover {
             color: var(--accent-color);
+        }
+
+        .right ul li a.active {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            background: rgba(44, 62, 80, 0.85);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: background 0.3s;
+            border-radius: 10px;
+            padding: 0 10px;
         }
 
         .menu-icon {
@@ -208,12 +189,11 @@
         /* Hero Section */
         .hero {
             padding: 150px 20px;
-            margin-bottom: 50px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.925rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--accent-color);
             text-shadow: 0 0 5px var(--shadow-color);
@@ -227,7 +207,6 @@
         .hero p {
             font-size: 1.6rem;
             color: var(--text-color);
-            margin-bottom: -2rem;
         }
 
         .hero span {
@@ -254,6 +233,36 @@
             transform: scale(1.1);
         }
 
+        /* Section Dividers & Backgrounds */
+        section {
+            padding: 80px 0 60px 0;
+        }
+
+        #hero {
+            background: rgba(44, 62, 80, 0.98);
+            background: rgba(26, 188, 156, 0.07);
+        }
+
+        #about {
+            background: rgba(44, 62, 80, 0.98);
+            background: rgba(26, 188, 156, 0.07);
+        }
+
+        #skills {
+            background: rgba(44, 62, 80, 0.98);
+            background: rgba(26, 188, 156, 0.07);
+        }
+
+        #projects {
+            background: rgba(44, 62, 80, 0.98);
+            background: rgba(26, 188, 156, 0.07);
+        }
+
+        #contact {
+            background: rgba(44, 62, 80, 0.98);
+            background: rgba(26, 188, 156, 0.07);
+        }
+
         /* About Section */
         #about {
             padding: 150px 20px;
@@ -261,7 +270,7 @@
         }
 
         #about h2 {
-            font-size: 2.925rem;
+            font-size: 2rem;
             color: var(--accent-color);
             margin-bottom: 20px;
         }
@@ -286,7 +295,7 @@
             color: var(--accent-color);
             margin-top: -3rem;
             margin-bottom: 2rem;
-            font-size: 2.925rem;
+            font-size: 2rem;
         }
 
         .skills-container {
@@ -305,7 +314,7 @@
         }
 
         .skills-category h3 {
-            font-size: 1.755rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent-color);
             margin-bottom: 15px;
@@ -355,7 +364,7 @@
             text-align: center;
             color: var(--accent-color);
             margin-bottom: 50px;
-            font-size: 2.925rem;
+            font-size: 2rem;
         }
 
         .projects-container {
@@ -382,7 +391,7 @@
         }
 
         .project-card h3 {
-            font-size: 1.755rem;
+            font-size: 1.2rem;
             color: var(--accent-color);
             margin-bottom: 15px;
         }
@@ -411,12 +420,11 @@
         /* Contact Section */
         #contact {
             color: var(--text-color);
-            padding: 150px 0 0 0;
             text-align: center;
         }
 
         #contact h2 {
-            font-size: 2.925rem;
+            font-size: 2rem;
             color: var(--accent-color);
             margin-bottom: 20px;
         }
@@ -513,15 +521,9 @@
 
         /* Footer Section */
         footer {
-            padding: 10px 0;
             color: var(--text-color);
             font-size: 0.936rem;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            height: 2.5rem;
-            width: 100%;
-            z-index: 1000;
         }
 
 
@@ -751,6 +753,88 @@
                 font-size: 0.8rem;
             }
         }
+
+        /* Button Styles */
+        button,
+        .project-card a {
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(26, 188, 156, 0.15);
+            font-weight: 600;
+        }
+
+        button:active,
+        .project-card a:active {
+            transform: scale(0.97);
+        }
+
+        /* Project Card Enhancements */
+        .project-card {
+            transition: box-shadow 0.3s, transform 0.3s;
+            box-shadow: 0 4px 24px rgba(26, 188, 156, 0.10);
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 32px rgba(26, 188, 156, 0.18);
+            transform: translateY(-8px) scale(1.03);
+        }
+
+        /* Contact Form Feedback */
+        .form-message {
+            margin-top: 1rem;
+            color: var(--accent-color);
+            font-size: 1rem;
+            display: none;
+            background-color: transparent;
+        }
+
+        /* Spacing & Typography */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Source Code Pro', monospace;
+            letter-spacing: 1px;
+        }
+
+        section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category,
+        .project-card {
+            margin-bottom: 2rem;
+        }
+
+        /* Mobile Tweaks */
+        @media (max-width: 600px) {
+            section {
+                padding: 50px 0 30px 0;
+            }
+
+            .project-card,
+            .skills-category {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Accessibility */
+        nav,
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            outline-color: var(--accent-color);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
     </style>
 </head>
 
@@ -786,7 +870,7 @@
 
         <div class="content">
             <!-- Hero Section -->
-            <section class="hero" id="hero">
+            <section class="hero fade-in" id="hero">
                 <h1>Hi, I'm Ritupan Deka</h1>
                 <p>A passionate developer with expertise in</p>
                 <span id="element"></span>
@@ -794,37 +878,34 @@
                     <button id="btn">Download Resume</button>
                 </div>
             </section>
-
             <!-- About Section -->
-            <section id="about">
+            <section id="about" class="fade-in">
                 <h2>About Me</h2>
                 <p>
                     I am a Computer Science and Engineering Graduate. I specialize in Android and Web development, with
-                    hands-on
-                    experience in building dynamic and scalable applications. I am passionate about learning new
-                    technologies
-                    and applying them to real-world problems. I have experience with Machine Learning and Cloud
-                    Computing as
-                    well, and I enjoy tackling challenging problems.
+                    hands-on experience in building dynamic and scalable applications. I am passionate about learning
+                    new
+                    technologies and applying them to real-world problems. I have experience with Machine Learning and
+                    Cloud
+                    Computing as well, and I enjoy tackling challenging problems.
                 </p>
                 <div class="contact-info">
                     <div class="social-links">
                         <a href="mailto:ritupan777@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you!"
-                            target="_blank">
+                            target="_blank" aria-label="Email">
                             <img src="images/gmail.png" alt="Gmail" loading="lazy">
                         </a>
-                        <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank">
+                        <a href="https://www.linkedin.com/in/ritupan-deka/" target="_blank" aria-label="LinkedIn">
                             <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
                         </a>
-                        <a href="https://github.com/Ritupan-Deka" target="_blank">
+                        <a href="https://github.com/Ritupan-Deka" target="_blank" aria-label="GitHub">
                             <img src="images/github.png" alt="GitHub" loading="lazy">
                         </a>
                     </div>
                 </div>
             </section>
-
             <!-- Skills Section -->
-            <section id="skills">
+            <section id="skills" class="fade-in">
                 <h2>Skills</h2>
                 <div class="skills-container">
                     <div class="skills-category">
@@ -905,42 +986,43 @@
                     </div>
                 </div>
             </section>
-
             <!-- Projects Section -->
-            <section id="projects">
+            <section id="projects" class="fade-in">
                 <h2>My Projects</h2>
                 <div class="projects-container">
                     <div class="project-card">
                         <h3>Handwritten Text Recognition</h3>
                         <p>Developed a machine learning model for handwritten paragraph image-to-text conversion.</p>
-                        <a href="#">View Project</a>
+                        <a href="#">View Project</a> <!-- Note: Need to update with actual project link -->
                     </div>
                     <div class="project-card">
                         <h3>Zero Watermarking for Medical Image</h3>
                         <p>Created a technique for watermarking medical images while preserving their integrity.</p>
-                        <a href="#">View Project</a>
+                        <a href="#">View Project</a> <!-- Note: Need to update with actual project link -->
                     </div>
                     <div class="project-card">
                         <h3>Zero Watermarking for Medical Image</h3>
                         <p>Created a technique for watermarking medical images while preserving their integrity.</p>
-                        <a href="#">View Project</a>
+                        <a href="#">View Project</a> <!-- Note: Need to update with actual project link -->
                     </div>
-                    
+
                 </div>
             </section>
-
             <!-- Contact Section -->
-            <section id="contact">
+            <section id="contact" class="fade-in">
                 <h2>Contact Me</h2>
                 <p>If you'd like to get in touch, feel free to reach out using the form below or connect via email or
-                    social
-                    media!</p>
+                    social media!</p>
                 <div class="contact-container">
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form"
+                        aria-label="Contact form">
+                        <!-- Note to self: Don't forget to put my real Formspree ID above -->
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+                        <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+                        <textarea name="message" placeholder="Your Message" rows="5" required
+                            aria-label="Your Message"></textarea>
                         <button type="submit">Send Message</button>
+                        <div class="form-message" id="form-message"></div>
                     </form>
                 </div>
             </section>
@@ -1008,7 +1090,7 @@
 
         document.getElementById("btn").addEventListener("click", function () {
             const link = document.createElement("a");
-            link.href = "assets/Resume_RITUPAN_.pdf";
+            link.href = "assets/Resume_RITUPAN.pdf";
             link.download = "Ritupan_Deka_Resume.pdf";
             link.click();
         });
@@ -1022,36 +1104,89 @@
                 interactive: true,
                 strength: 0.06
             });
-
-            // Create random drops
-            // setInterval(() => {
-            //   const x = Math.random();
-            // const y = Math.random();
-            //    const dropRadius = 15; 
-            //    const strength = 0.06; 
-            //    const perturbance = 0.1; 
-
-            //                $('.ripple-container').ripples('drop', x * $('.ripple-container').width(), y * $('..ripple-container').height(), dropRadius, strength);
-            //          }, 1000); 
         });
 
         function toggleMenu() {
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('show');
         }
-    </script>
 
-    <!-- Add Anime.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        // Navbar active link highlight on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.right ul li a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        // Fade-in animation on scroll
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const fadeInOnScroll = () => {
+            fadeEls.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('DOMContentLoaded', fadeInOnScroll);
+        // Contact form feedback
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-message');
+            msg.style.display = 'block';
+            msg.textContent = 'Sending...';
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    msg.textContent = 'Thank you! Your message has been sent.';
+                    this.reset();
+                } else {
+                    msg.textContent = 'Oops! Something went wrong.';
+                }
+            }).catch(() => {
+                msg.textContent = 'Oops! Something went wrong.';
+            });
+        });
 
-    <script>
-        // Cool animations for various elements
+        // Intersection Observer for fade-in animations
         document.addEventListener("DOMContentLoaded", function () {
-            // Create intersection observer for all animated sections
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Trigger section-specific animations
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+    <!-- Anime.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
                         switch (entry.target.id) {
                             case 'hero':
                                 animateHero();
@@ -1073,7 +1208,6 @@
                 });
             }, { threshold: 0.2 });
 
-            // Observe all main sections
             ['hero', 'about', 'skills', 'projects', 'contact'].forEach(id => {
                 observer.observe(document.getElementById(id));
             });
@@ -1181,8 +1315,8 @@
                     delay: anime.stagger(200),
                     duration: 100,
                     easing: 'easeOutQuad',
-                    complete: function(anim) {
-                        // Add subtle floating animation after entrance
+                    complete: function (anim) {
+                        // Subtle floating animation after entrance
                         anime({
                             targets: '.project-card',
                             translateY: [-5, 5],
@@ -1231,8 +1365,8 @@
                     anime({
                         targets: icon,
                         scale: 1.2,
-                        rotate: '360deg',
-                        duration: 600,
+                        // rotate: '360deg',
+                        duration: 200,
                         easing: 'easeInOutBack'
                     });
                 });
@@ -1240,8 +1374,8 @@
                     anime({
                         targets: icon,
                         scale: 1,
-                        rotate: '0deg',
-                        duration: 600,
+                        // rotate: '0deg',
+                        duration: 200,
                         easing: 'easeOutQuad'
                     });
                 });
