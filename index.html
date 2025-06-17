@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ritupan Deka - Portfolio</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
     <link rel="icon" href="images/logo3.png" type="image/png">
 
     <!-- SEO & Accessibility Meta Tags -->
     <meta name="description" content="Portfolio of Ritupan Deka - Developer, Engineer, and Tech Enthusiast.">
-    <meta name="keywords" content="Ritupan Deka, Portfolio, Developer, Engineer, Web, Android, Machine Learning, Projects">
+    <meta name="keywords"
+        content="Ritupan Deka, Portfolio, Developer, Engineer, Web, Android, Machine Learning, Projects">
     <meta name="author" content="Ritupan Deka">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Styles -->
     <style>
-        /* ===== CSS VARIABLES ===== */
         :root {
             --background-color: #2C3E50;
             --text-color: #FFFFFF;
@@ -28,11 +29,17 @@
             --shadow-color: #00e1ffb6;
         }
 
-        /* ===== BASE RESET & ROOT ===== */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
             height: 100%;
         }
+
         body {
             min-height: 100vh;
             background-color: var(--background-color);
@@ -44,11 +51,25 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        a { text-decoration: none; color: inherit; }
-        ::-webkit-scrollbar { display: none; -ms-overflow-style: none; scrollbar-width: none; }
-        .ripple-container { min-height: 100vh; width: 100%; z-index: 1; }
 
-        /* ===== NAVIGATION BAR ===== */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .ripple-container {
+            min-height: 100vh;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Navigation Bar */
         nav {
             display: flex;
             justify-content: space-evenly;
@@ -60,38 +81,69 @@
             z-index: 1000;
             color: var(--text-color);
         }
+
         .left img {
             display: inline-block;
             height: 50px;
             margin-right: 120px;
             transition: transform 0.3s ease;
         }
-        .left img:hover { cursor: pointer; transform: scale(1.2); }
+
+        .left img:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
         .menu-icon {
             display: none;
             font-size: 2rem;
             cursor: pointer;
             color: var(--text-color);
         }
+
         .right ul {
             list-style: none;
             display: flex;
             gap: 30px;
         }
+
         .right ul li a {
             color: var(--text-color);
             font-size: 1.287rem;
             display: inline-block;
             transition: color 0.3s ease, transform 0.3s ease;
         }
-        .right ul li a:hover { color: var(--accent-color); }
-        .center { transition: color 0.3s ease; }
-        #clock { text-align: center; color: var(--text-color); }
-        #time { font-size: 2.106rem; font-weight: bold; }
-        #day-message { font-size: 1.404rem; font-weight: 400; margin-top: 5px; }
-        #clock:hover { cursor: pointer; color: var(--accent-color); }
 
-        /* ===== NOTIFICATION MESSAGE ===== */
+        .right ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .center {
+            transition: color 0.3s ease;
+        }
+
+        #clock {
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        #time {
+            font-size: 2.106rem;
+            font-weight: bold;
+        }
+
+        #day-message {
+            font-size: 1.404rem;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        #clock:hover {
+            cursor: pointer;
+            color: var(--accent-color);
+        }
+
+        /* Notification Message */
         .below-nav-msg {
             position: fixed;
             width: 100%;
@@ -102,13 +154,17 @@
             z-index: 1001;
             transition: opacity 0.3s ease;
         }
-        .below-nav-msg:hover { opacity: 0.7; }
 
-        /* ===== HERO SECTION ===== */
+        .below-nav-msg:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
         .hero {
             padding: 150px 20px;
             text-align: center;
         }
+
         .hero h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -116,8 +172,17 @@
             text-shadow: 0 0 5px var(--shadow-color);
             transition: text-shadow 0.3s ease;
         }
-        .hero h1:hover { text-shadow: 0 0 10px var(--shadow-color); }
-        .hero p, .hero span { font-size: 1.6rem; color: var(--text-color); }
+
+        .hero h1:hover {
+            text-shadow: 0 0 10px var(--shadow-color);
+        }
+
+        .hero p,
+        .hero span {
+            font-size: 1.6rem;
+            color: var(--text-color);
+        }
+
         .hero #btn {
             background-color: var(--accent-color);
             color: var(--background-color);
@@ -129,20 +194,47 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        .hero #btn:hover { background-color: var(--hover-accent-color); transform: scale(1.1); }
-        .contact-info { font-size: 1.287rem; z-index: 1000; }
-        .social-links { margin-top: 20px; }
-        .social-links a { margin: 0 10px; }
+
+        .hero #btn:hover {
+            background-color: var(--hover-accent-color);
+            transform: scale(1.1);
+        }
+
+        .contact-info {
+            font-size: 1.287rem;
+            z-index: 1000;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+        }
+
         .social-links img {
             width: 40px;
             height: 40px;
             transition: transform 0.3s ease;
         }
-        .social-links a:hover img { transform: scale(1.1); }
 
-        /* ===== ABOUT SECTION ===== */
-        #about { padding: 150px 20px; text-align: center; }
-        #about h2 { font-size: 2rem; color: var(--accent-color); margin-bottom: 20px; }
+        .social-links a:hover img {
+            transform: scale(1.1);
+        }
+
+        /* About Section */
+        #about {
+            padding: 150px 20px;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
         #about p {
             font-size: 1.404rem;
             text-align: justify;
@@ -152,8 +244,12 @@
             margin: 0 auto;
         }
 
-        /* ===== SKILLS SECTION ===== */
-        #skills { padding: 180px 20px; text-align: center; }
+        /* Skills Section */
+        #skills {
+            padding: 180px 20px;
+            text-align: center;
+        }
+
         #skills h2 {
             text-align: center;
             color: var(--accent-color);
@@ -161,12 +257,14 @@
             margin-bottom: 2rem;
             font-size: 2rem;
         }
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
         }
+
         .skills-category {
             padding: 20px;
             border-radius: 10px;
@@ -174,18 +272,21 @@
             max-width: 300px;
             text-align: center;
         }
+
         .skills-category h3 {
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent-color);
             margin-bottom: 15px;
         }
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
         }
+
         .skill-tags span {
             padding: 5px 10px;
             color: var(--accent-color);
@@ -196,22 +297,31 @@
             white-space: nowrap;
             transition: background-color 0.2s, color 0.2s;
         }
-        .skill-tags span:hover { background-color: var(--accent-color); color: var(--background-color); }
 
-        /* ===== PROJECTS SECTION ===== */
-        #projects { padding: 150px 20px; }
+        .skill-tags span:hover {
+            background-color: var(--accent-color);
+            color: var(--background-color);
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 150px 20px;
+        }
+
         #projects h2 {
             text-align: center;
             color: var(--accent-color);
             margin-bottom: 50px;
             font-size: 2rem;
         }
+
         .projects-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
         }
+
         .project-card {
             background-color: var(--background-color);
             width: 300px;
@@ -223,13 +333,24 @@
             color: var(--text-color);
             margin-bottom: 2rem;
         }
+
         .project-card:hover {
             box-shadow: 0 8px 32px rgba(26, 188, 156, 0.18);
             transform: translateY(-8px) scale(1.03);
             background-color: var(--hover-accent-color);
         }
-        .project-card h3 { font-size: 1.2rem; color: var(--accent-color); margin-bottom: 15px; }
-        .project-card p { font-size: 1.17rem; color: var(--text-color); }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            font-size: 1.17rem;
+            color: var(--text-color);
+        }
+
         .project-card a {
             display: inline-block;
             color: var(--accent-color);
@@ -242,20 +363,48 @@
             box-shadow: 0 2px 8px rgba(26, 188, 156, 0.15);
             transition: background-color 0.3s, color 0.3s;
         }
-        .project-card a:hover, .project-card a:focus {
+
+        .project-card a:hover,
+        .project-card a:focus {
             background-color: var(--accent-color);
             color: var(--background-color);
             outline: 2px solid var(--accent-color);
         }
-        .project-card a:active { transform: scale(0.97); }
 
-        /* ===== CONTACT SECTION ===== */
-        #contact { color: var(--text-color); text-align: center;}
-        #contact h2 { font-size: 2rem; color: var(--accent-color); margin-bottom: 20px; }
-        #contact p { font-size: 1.2rem; margin-bottom: 40px; color: var(--text-color); }
-        .contact-container { display: flex; flex-direction: column; align-items: center; gap: 40px; }
-        /* Terminal-style contact form */
-        .terminal { max-width: 700px; width: 100%; }
+        .project-card a:active {
+            transform: scale(0.97);
+        }
+
+        /* Contact Section */
+        #contact {
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--text-color);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .terminal {
+            max-width: 700px;
+            width: 100%;
+        }
+
         .terminal-header {
             background: rgba(24, 26, 32, 0.3);
             border-radius: 6px 6px 0 0;
@@ -264,10 +413,28 @@
             gap: 1px;
             border-bottom: 1px solid #222;
         }
-        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; transform: scale(0.7); margin-left: 1px; }
-        .dot.red { background: #ff5f56; }
-        .dot.yellow { background: #ffbd2e; }
-        .dot.green { background: #27c93f; }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            transform: scale(0.7);
+            margin-left: 1px;
+        }
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .dot.green {
+            background: #27c93f;
+        }
+
         .terminal-body {
             min-height: 300px;
             border-radius: 0 0 8px 8px;
@@ -276,15 +443,23 @@
             text-align: left;
             overflow-y: auto;
         }
-        .terminal-title, .terminal-line {
+
+        .terminal-title,
+        .terminal-line {
             display: flex;
             align-items: flex-start;
             color: #e5e5e5;
             font-family: 'Fira Mono', 'Source Code Pro', monospace;
             font-size: 0.7rem;
         }
-        .prompt-arrow { color: #7fffd4; margin-right: 6px; }
-        .terminal-input, .terminal-textarea {
+
+        .prompt-arrow {
+            color: #7fffd4;
+            margin-right: 6px;
+        }
+
+        .terminal-input,
+        .terminal-textarea {
             background: transparent;
             border: none;
             color: #e5e5e5;
@@ -294,8 +469,17 @@
             flex: 1;
             resize: none;
         }
-        .terminal-input::placeholder, .terminal-textarea::placeholder { color: #888; }
-        .terminal-textarea { min-height: 40px; max-height: 120px; }
+
+        .terminal-input::placeholder,
+        .terminal-textarea::placeholder {
+            color: #888;
+        }
+
+        .terminal-textarea {
+            min-height: 40px;
+            max-height: 120px;
+        }
+
         .send-btn {
             background: #27c93f;
             color: #181a20;
@@ -309,10 +493,16 @@
             margin-left: 8px;
             transition: background 0.2s;
         }
-        .send-btn:hover { background: #1fa32b; }
-        .send-btn:focus { outline: 2px solid #7fffd4; }
 
-        /* ===== FOOTER ===== */
+        .send-btn:hover {
+            background: #1fa32b;
+        }
+
+        .send-btn:focus {
+            outline: 2px solid #7fffd4;
+        }
+
+        /* Footer */
         footer {
             color: var(--text-color);
             font-size: 0.936rem;
@@ -321,63 +511,111 @@
             background: transparent;
         }
 
-        /* ===== ANIMATIONS ===== */
+        /* Animations */
         .fade-in {
             opacity: 1;
         }
+
         .fade-in.visible {
             opacity: 1;
         }
 
-        /* ===== HEADINGS & TYPOGRAPHY ===== */
-        h1, h2, h3 {
+        /* Headings & Typography */
+        h1,
+        h2,
+        h3 {
             font-family: 'Source Code Pro', monospace;
             letter-spacing: 1px;
         }
-        section h2 { margin-bottom: 2rem; }
-        .skills-category, .project-card { margin-bottom: 2rem; }
 
-        /* ===== BUTTON ENHANCEMENTS ===== */
-        button, .project-card a {
+        section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category,
+        .project-card {
+            margin-bottom: 2rem;
+        }
+
+        /* Button Enhancements */
+        button,
+        .project-card a {
             border-radius: 30px;
             box-shadow: 0 2px 8px rgba(26, 188, 156, 0.15);
             font-weight: 600;
         }
-        button:focus { outline: 2px solid var(--accent-color); }
-        button:active { transform: scale(0.97); }
 
-        /* ===== FORM FEEDBACK ===== */
-        .form-message {
-            margin-top: 1rem;
-            color: var(--accent-color);
-            font-size: 1rem;
-            display: none;
-            background-color: transparent;
+        button:focus {
+            outline: 2px solid var(--accent-color);
         }
 
-        /* ===== ACCESSIBILITY ===== */
-        nav, .contact-form input, .contact-form textarea, .contact-form button {
+        button:active {
+            transform: scale(0.97);
+        }
+
+        /* Accessibility */
+        nav {
             outline-color: var(--accent-color);
         }
 
-        /* ================================================================
-           =================== MEDIA QUERIES ==============================
-           ================================================================ */
-
-        /* Tablet and below */
+        /* Media Queries */
         @media (max-width: 768px) {
-            body { font-size: 1rem; }
-            .hero, #about, #skills, #projects, #contact { padding: 100px 10px; }
-            .hero h1, #about h2, #skills h2, #projects h2, #contact h2 { font-size: 2.5rem; }
-            .hero p, #about p, #contact p { font-size: 1.2rem; }
-            .hero #btn { font-size: 1rem; }
-            .skills-category h3 { font-size: 1.5rem; }
-            .skill-tags span { font-size: 1rem; }
-            .project-card { width: 90%; margin-bottom: 20px; }
-            .project-card h3 { font-size: 1.5rem; }
-            .project-card p, .project-card a { font-size: 1rem; }
-            .contact-form input, .contact-form textarea, .contact-form button { font-size: 0.8rem; }
-            .contact-info { font-size: 1rem; }
+            body {
+                font-size: 1rem;
+            }
+
+            .hero,
+            #about,
+            #skills,
+            #projects,
+            #contact {
+                padding: 100px 10px;
+            }
+
+            .hero h1,
+            #about h2,
+            #skills h2,
+            #projects h2,
+            #contact h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p,
+            #about p,
+            #contact p {
+                font-size: 1.2rem;
+            }
+
+            .hero #btn {
+                font-size: 1rem;
+            }
+
+            .skills-category h3 {
+                font-size: 1.5rem;
+            }
+
+            .skill-tags span {
+                font-size: 1rem;
+            }
+
+            .project-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .project-card p,
+            .project-card a {
+                font-size: 1rem;
+            }
+
+            .contact-info {
+                font-size: 1rem;
+            }
+
             .right ul {
                 display: none;
                 flex-direction: column;
@@ -388,45 +626,122 @@
                 width: 100%;
                 text-align: center;
             }
-            .right ul.show { display: flex; }
-            .menu-icon { display: block; }
-            .left { order: 1; }
-            .menu-icon { order: 2; }
-            #clock { order: 3; width: 100%; text-align: center; margin-top: 10px; }
-            #time { font-size: 1.5rem; }
-            #day-message { font-size: 1rem; }
-            .right ul li a { font-size: 1rem; }
+
+            .right ul.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .left {
+                order: 1;
+            }
+
+            .menu-icon {
+                order: 2;
+            }
+
+            #clock {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            #time {
+                font-size: 1.5rem;
+            }
+
+            #day-message {
+                font-size: 1rem;
+            }
+
+            .right ul li a {
+                font-size: 1rem;
+            }
         }
-        /* Mobile and below */
+
         @media (max-width: 576px) {
-            body { font-size: 0.9rem; }
-            .hero, #about, #skills, #projects, #contact { padding: 80px 10px; }
-            .hero h1, #about h2, #skills h2, #projects h2, #contact h2 { font-size: 2rem; }
-            .hero p, #about p, #contact p { font-size: 1rem; }
-            .hero #btn { font-size: 0.8rem; }
-            .skills-category h3 { font-size: 1.2rem; }
-            .skill-tags span { font-size: 0.8rem; }
-            .project-card { width: 90%; margin-bottom: 20px; }
-            .project-card h3 { font-size: 1.2rem; }
-            .project-card p, .project-card a { font-size: 0.8rem; }
-            .contact-form input, .contact-form textarea, .contact-form button { font-size: 0.7rem; }
-            .contact-info { font-size: 0.8rem; }
+            body {
+                font-size: 0.9rem;
+            }
+
+            .hero,
+            #about,
+            #skills,
+            #projects,
+            #contact {
+                padding: 80px 10px;
+            }
+
+            .hero h1,
+            #about h2,
+            #skills h2,
+            #projects h2,
+            #contact h2 {
+                font-size: 2rem;
+            }
+
+            .hero p,
+            #about p,
+            #contact p {
+                font-size: 1rem;
+            }
+
+            .hero #btn {
+                font-size: 0.8rem;
+            }
+
+            .skills-category h3 {
+                font-size: 1.2rem;
+            }
+
+            .skill-tags span {
+                font-size: 0.8rem;
+            }
+
+            .project-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-card p,
+            .project-card a {
+                font-size: 0.8rem;
+            }
+
+            .contact-info {
+                font-size: 0.8rem;
+            }
         }
-        /* Very small mobile tweaks */
+
         @media (max-width: 600px) {
-            section { padding: 50px 0 30px 0; }
-            .project-card, .skills-category { margin-bottom: 1rem; }
+            section {
+                padding: 50px 0 30px 0;
+            }
+
+            .project-card,
+            .skills-category {
+                margin-bottom: 1rem;
+            }
         }
+
         @media (max-width: 800px) {
-            .terminal { max-width: 98vw; }
+            .terminal {
+                max-width: 98vw;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Ripple Container for the entire page layout -->
     <div class="ripple-container">
-        <!-- Header (Navigation Bar) -->
         <header role="banner">
             <div class="below-nav-msg" role="alert">
                 Use nav bar
@@ -452,7 +767,6 @@
             </nav>
         </header>
 
-        <!-- Main content wrapper -->
         <div class="content">
             <!-- Hero Section -->
             <section class="hero fade-in" id="hero" role="region" aria-labelledby="hero-heading">
@@ -587,7 +901,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer role="contentinfo">
         <p>© 2024 Ritupan Deka. All Rights Reserved.</p>
     </footer>
@@ -738,33 +1051,7 @@
             });
         }
 
-        // 8. CONTACT FORM HANDLING (if present)
-        function setupContactForm() {
-            const contactForm = document.querySelector(".contact-form");
-            if (!contactForm) return;
-            contactForm.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                const msg = document.getElementById("form-message");
-                if (!msg) return;
-                msg.style.display = "block";
-                msg.textContent = "Sending...";
-                try {
-                    const response = await fetch(contactForm.action, {
-                        method: "POST",
-                        body: new FormData(contactForm),
-                        headers: { Accept: "application/json" }
-                    });
-                    msg.textContent = response.ok
-                        ? "Thank you! Your message has been sent."
-                        : "Oops! Something went wrong.";
-                    if (response.ok) contactForm.reset();
-                } catch (error) {
-                    msg.textContent = "Oops! Something went wrong.";
-                }
-            });
-        }
-
-        // 9. SECTION ANIMATIONS WITH ANIME.JS
+        // 8. SECTION ANIMATIONS WITH ANIME.JS
         function setupSectionAnimations() {
             if (!window.anime) return;
             const observer = new IntersectionObserver(
@@ -825,10 +1112,7 @@
             }
             function animateContact() {
                 anime({ targets: "#contact h2, #contact p", translateY: [-30, 0], opacity: [0, 1], delay: anime.stagger(200), duration: 600 });
-                anime({ targets: ".contact-form input, .contact-form textarea", translateX: [-150, 0], opacity: [0, 1], delay: anime.stagger(100, { start: 400 }), duration: 600, easing: "easeOutQuad" });
-                anime({ targets: ".contact-form button", scale: [0, 1], opacity: [0, 1], delay: 1000, duration: 600, easing: "easeOutBack" });
             }
-            // Social media icon hover effects
             document.querySelectorAll(".social-links img").forEach((icon) => {
                 icon.addEventListener("mouseover", () => {
                     anime({ targets: icon, scale: 1.2, duration: 200, easing: "easeInOutBack" });
@@ -839,24 +1123,42 @@
             });
         }
 
-        // 10. TERMINAL CONTACT FORM
+        // 9. TERMINAL CONTACT FORM
         (function terminalContactForm() {
             const terminalLines = document.getElementById("terminal-lines");
             const terminalBody = document.getElementById("terminal-body");
             if (!terminalLines || !terminalBody) return;
+
             const formData = { name: "", email: "", message: "" };
-            function addTerminalLine(label, inputEl) {
+            let step = 0;
+            let messageLines = [];
+
+            function addTerminalLine(label, isInput = false, inputType = "text", aria = "", onEnter = null, isTextarea = false) {
                 const div = document.createElement("div");
                 div.className = "terminal-line";
                 div.innerHTML = label;
-                if (inputEl) {
-                    div.appendChild(inputEl);
-                    inputEl.focus();
+                if (isInput) {
+                    const input = isTextarea ? document.createElement("textarea") : document.createElement("input");
+                    if (!isTextarea) input.type = inputType;
+                    input.className = isTextarea ? "terminal-textarea" : "terminal-input";
+                    input.placeholder = "";
+                    if (aria) input.setAttribute("aria-label", aria);
+
+                    input.addEventListener("keydown", function handler(e) {
+                        if (e.key === "Enter" && (!isTextarea || !e.shiftKey)) {
+                            e.preventDefault();
+                            const val = input.value.trim();
+                            if (onEnter) onEnter(val);
+                            div.remove();
+                        }
+                    });
+                    div.appendChild(input);
+                    setTimeout(() => input.focus(), 100);
                 }
                 terminalLines.appendChild(div);
                 terminalBody.scrollTop = terminalBody.scrollHeight;
-                return inputEl;
             }
+
             function addStaticLine(label) {
                 const div = document.createElement("div");
                 div.className = "terminal-line";
@@ -864,57 +1166,119 @@
                 terminalLines.appendChild(div);
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }
-            function promptInput(type, placeholder, aria, cb, isTextarea = false) {
-                const el = isTextarea ? document.createElement("textarea") : document.createElement("input");
-                if (!isTextarea) el.type = type;
-                el.className = isTextarea ? "terminal-textarea" : "terminal-input";
-                el.placeholder = placeholder;
-                el.setAttribute("aria-label", aria);
-                addTerminalLine(`<span class="prompt-arrow">└─▶</span> ${placeholder}:`, el);
-                el.addEventListener("keydown", function handler(e) {
-                    if (e.key === "Enter" && (!isTextarea || !e.shiftKey) && el.value.trim()) {
-                        if (isTextarea) e.preventDefault();
-                        cb(el.value.trim());
-                        addStaticLine(
-                            `<span class='prompt-arrow'>└─▶</span> ${placeholder}: <span style='color:#7fffd4;white-space:pre-line;'>${el.value
-                                .trim()
-                                .replace(/\n/g, "<br>")}</span>`
-                        );
-                        el.parentElement.remove();
+
+            function startTerminal() {
+                addStaticLine(`<span class="prompt-arrow">└─▶</span> Welcome to the contact terminal!`);
+                askName();
+            }
+
+            function askName() {
+                addTerminalLine(`<span class="prompt-arrow">└─▶</span> Please enter your Name:`, true, "text", "Enter your name", (name) => {
+                    if (!name) { addStaticLine(`<span class="prompt-arrow">└─▶</span> Name cannot be empty.`); return askName(); }
+                    formData.name = name;
+                    addStaticLine(`<span class="prompt-arrow">└─▶</span> Name: <span style="color:#7fffd4;">${name}</span>`);
+                    askEmail();
+                });
+            }
+
+            function askEmail() {
+                addTerminalLine(`<span class="prompt-arrow">└─▶</span> Please enter your Email:`, true, "email", "Enter your email", (email) => {
+                    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                        addStaticLine(`<span class="prompt-arrow">└─▶</span> Invalid email format.`);
+                        return askEmail();
+                    }
+                    formData.email = email;
+                    addStaticLine(`<span class="prompt-arrow">└─▶</span> Email: <span style="color:#7fffd4;">${email}</span>`);
+                    askMessage();
+                });
+            }
+
+            function askMessage() {
+                addStaticLine(`<span class="prompt-arrow">└─▶</span> Please enter your Message. Type <span style="color:#7fffd4;">/end</span> on a new line to finish:`);
+                let message = "";
+                addTerminalLine(`<span class="prompt-arrow">└─▶</span>`, true, "text", "Enter your message", function handler(val) {
+                    if (val === "/end") {
+                        if (!message.trim()) {
+                            addStaticLine(`<span class="prompt-arrow">└─▶</span> Message cannot be empty.`);
+                            return askMessage();
+                        }
+                        formData.message = message.trim();
+                        addStaticLine(`<span class="prompt-arrow">└─▶</span> Message: <span style="color:#7fffd4;white-space:pre-line;">${formData.message}</span>`);
+                        promptSend();
+                    } else {
+                        message += (message.length ? "\n" : "") + val;
+                        askMessageMore(message);
                     }
                 });
             }
-            function showSendButton() {
-                const btn = document.createElement("button");
-                btn.className = "send-btn";
-                btn.textContent = "send";
-                btn.setAttribute("aria-label", "Send contact form");
-                addTerminalLine('<span class="prompt-arrow">└─▶</span>', btn);
-                btn.addEventListener("click", () => {
-                    btn.disabled = true;
-                    addStaticLine(`<span class='prompt-arrow'>└─▶</span> Sending...`);
-                    setTimeout(() => {
-                        addStaticLine(
-                            `<span class='prompt-arrow'>└─▶</span> <span style='color:#7fffd4;'>Message sent! Thank you for reaching out.</span>`
-                        );
-                        btn.parentElement.remove();
-                    }, 1200);
+            function askMessageMore(message) {
+                addTerminalLine(`<span class="prompt-arrow">└─▶</span>`, true, "text", "Continue your message or type /end", function handler(val) {
+                    if (val === "/end") {
+                        if (!message.trim()) {
+                            addStaticLine(`<span class="prompt-arrow">└─▶</span> Message cannot be empty.`);
+                            return askMessage();
+                        }
+                        formData.message = message.trim();
+                        addStaticLine(`<span class="prompt-arrow">└─▶</span> Message: <span style="color:#7fffd4;white-space:pre-line;">${formData.message}</span>`);
+                        promptSend();
+                    } else {
+                        message += "\n" + val;
+                        askMessageMore(message);
+                    }
                 });
-                btn.focus();
             }
-            promptInput("text", "Name", "Enter your name", (name) => {
-                formData.name = name;
-                promptInput("email", "Email", "Enter your email", (email) => {
-                    formData.email = email;
-                    promptInput("", "Message", "Enter your message", (message) => {
-                        formData.message = message;
-                        showSendButton();
-                    }, true);
+
+            function promptSend() {
+                addStaticLine(`<span class="prompt-arrow">└─▶</span> Type  <span style="color:#7fffd4;">send</span>  to submit or <span style="color:#ff5f56;">cancel</span> to abort.`);
+                addTerminalLine(`<span class="prompt-arrow">└─▶</span>`, true, "text", "Type 'send' or 'cancel'", function handler(val) {
+                    if (val.toLowerCase() === "send") {
+                        sendEmail();
+                    } else if (val.toLowerCase() === "cancel") {
+                        addStaticLine(`<span class="prompt-arrow">└─▶</span> Message cancelled. Type anything to start again.`);
+                        addTerminalLine(`<span class="prompt-arrow">└─▶</span>`, true, "text", "", () => {
+                            startTerminal();
+                        });
+                    } else {
+                        addStaticLine(`<span class="prompt-arrow">└─▶</span> Unknown command. Please type 'send' or 'cancel'.`);
+                        promptSend();
+                    }
                 });
-            });
+            }
+
+            function sendEmail() {
+                addStaticLine(`<span class="prompt-arrow">└─▶</span> Sending...`);
+                // Use formsubmit.co to send the email
+                fetch('https://formsubmit.co/ajax/ritupan777@gmail.com', {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        message: formData.message,
+                        _subject: `New Portfolio Contact from ${formData.name}`,
+                        _template: "table"
+                    })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success === "true" || data.success) {
+                            addStaticLine(`<span class="prompt-arrow">└─▶</span> <span style='color:#7fffd4;'>Message sent! Thank you for reaching out.</span>`);
+                            addStaticLine(`<span class="prompt-arrow">└─▶</span> Type anything to send another message.`);
+                        } else {
+                            addStaticLine(`<span class="prompt-arrow">└─▶</span> <span style='color:#ff5f56;'>There was an error sending your message. Please try again later.</span>`);
+                        }
+                        addTerminalLine(`<span class="prompt-arrow">└─▶</span>`, true, "text", "", () => startTerminal());
+                    })
+                    .catch(() => {
+                        addStaticLine(`<span class="prompt-arrow">└─▶</span> <span style='color:#ff5f56;'>There was an error sending your message. Please try again later.</span>`);
+                        addTerminalLine(`<span class="prompt-arrow">└─▶</span>`, true, "text", "", () => startTerminal());
+                    });
+            }
+
+            startTerminal();
         })();
 
-        // 11. INIT ON PAGE LOAD
+        // INIT ON PAGE LOAD
         document.addEventListener("DOMContentLoaded", () => {
             try {
                 initializeTypedAnimation();
@@ -922,7 +1286,6 @@
                 initializeRipples();
                 setupNavHighlight();
                 setupFadeInAnimations();
-                setupContactForm();
                 setupSectionAnimations();
             } catch (error) {
                 console.error("Initialization failed:", error);
@@ -930,4 +1293,5 @@
         });
     </script>
 </body>
+
 </html>
